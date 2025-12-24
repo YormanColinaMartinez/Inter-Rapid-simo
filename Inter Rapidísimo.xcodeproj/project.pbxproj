@@ -1,0 +1,817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0497253B2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497253A2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift */; };
+		0497253D2EFB408D00EF96E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497253C2EFB408D00EF96E1 /* ContentView.swift */; };
+		0497253F2EFB409000EF96E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0497253E2EFB409000EF96E1 /* Assets.xcassets */; };
+		049725422EFB409000EF96E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049725412EFB409000EF96E1 /* Preview Assets.xcassets */; };
+		0497254C2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497254B2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift */; };
+		049725562EFB409000EF96E1 /* Inter_Rapidi_simoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725552EFB409000EF96E1 /* Inter_Rapidi_simoUITests.swift */; };
+		049725582EFB409000EF96E1 /* Inter_Rapidi_simoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725572EFB409000EF96E1 /* Inter_Rapidi_simoUITestsLaunchTests.swift */; };
+		049725772EFB454C00EF96E1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725762EFB454C00EF96E1 /* APIClient.swift */; };
+		049725792EFB4AA400EF96E1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725782EFB4AA400EF96E1 /* APIError.swift */; };
+		0497257B2EFB4AB700EF96E1 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497257A2EFB4AB700EF96E1 /* APIClientProtocol.swift */; };
+		0497257D2EFB4B3B00EF96E1 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497257C2EFB4B3B00EF96E1 /* SQLiteManager.swift */; };
+		0497257F2EFB4D9900EF96E1 /* SQLiteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497257E2EFB4D9900EF96E1 /* SQLiteError.swift */; };
+		049725812EFB78D700EF96E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725802EFB78D700EF96E1 /* User.swift */; };
+		049725832EFB791200EF96E1 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725822EFB791200EF96E1 /* UserRepository.swift */; };
+		049725852EFB85DB00EF96E1 /* LoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725842EFB85DB00EF96E1 /* LoginResponseDTO.swift */; };
+		049725872EFB861E00EF96E1 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725862EFB861E00EF96E1 /* UserRepositoryImpl.swift */; };
+		049725892EFB87A600EF96E1 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725882EFB87A600EF96E1 /* AuthRepository.swift */; };
+		0497258B2EFB887400EF96E1 /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497258A2EFB887400EF96E1 /* AuthRepositoryImpl.swift */; };
+		0497258E2EFB898300EF96E1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497258D2EFB898300EF96E1 /* LoginViewModel.swift */; };
+		049725912EFB89AF00EF96E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725902EFB89AF00EF96E1 /* LoginView.swift */; };
+		049725942EFB89D500EF96E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725932EFB89D500EF96E1 /* HomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		049725482EFB409000EF96E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0497252F2EFB408D00EF96E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 049725362EFB408D00EF96E1;
+			remoteInfo = "Inter Rapidísimo";
+		};
+		049725522EFB409000EF96E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0497252F2EFB408D00EF96E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 049725362EFB408D00EF96E1;
+			remoteInfo = "Inter Rapidísimo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		049725372EFB408D00EF96E1 /* Inter Rapidísimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inter Rapidísimo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0497253A2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inter_Rapidi_simoApp.swift; sourceTree = "<group>"; };
+		0497253C2EFB408D00EF96E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0497253E2EFB409000EF96E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		049725412EFB409000EF96E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		049725472EFB409000EF96E1 /* Inter RapidísimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inter RapidísimoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0497254B2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inter_Rapidi_simoTests.swift; sourceTree = "<group>"; };
+		049725512EFB409000EF96E1 /* Inter RapidísimoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inter RapidísimoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		049725552EFB409000EF96E1 /* Inter_Rapidi_simoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inter_Rapidi_simoUITests.swift; sourceTree = "<group>"; };
+		049725572EFB409000EF96E1 /* Inter_Rapidi_simoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inter_Rapidi_simoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		049725762EFB454C00EF96E1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		049725782EFB4AA400EF96E1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0497257A2EFB4AB700EF96E1 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
+		0497257C2EFB4B3B00EF96E1 /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		0497257E2EFB4D9900EF96E1 /* SQLiteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteError.swift; sourceTree = "<group>"; };
+		049725802EFB78D700EF96E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		049725822EFB791200EF96E1 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		049725842EFB85DB00EF96E1 /* LoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDTO.swift; sourceTree = "<group>"; };
+		049725862EFB861E00EF96E1 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		049725882EFB87A600EF96E1 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		0497258A2EFB887400EF96E1 /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
+		0497258D2EFB898300EF96E1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		049725902EFB89AF00EF96E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		049725932EFB89D500EF96E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		049725342EFB408D00EF96E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		049725442EFB409000EF96E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0497254E2EFB409000EF96E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0497252E2EFB408D00EF96E1 = {
+			isa = PBXGroup;
+			children = (
+				049725642EFB40C800EF96E1 /* App */,
+				049725652EFB411D00EF96E1 /* Core */,
+				049725682EFB412B00EF96E1 /* Domain */,
+				049725672EFB412900EF96E1 /* Data */,
+				049725662EFB412600EF96E1 /* Presentation */,
+				049725392EFB408D00EF96E1 /* Inter Rapidísimo */,
+				0497254A2EFB409000EF96E1 /* Inter RapidísimoTests */,
+				049725542EFB409000EF96E1 /* Inter RapidísimoUITests */,
+				049725382EFB408D00EF96E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		049725382EFB408D00EF96E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				049725372EFB408D00EF96E1 /* Inter Rapidísimo.app */,
+				049725472EFB409000EF96E1 /* Inter RapidísimoTests.xctest */,
+				049725512EFB409000EF96E1 /* Inter RapidísimoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		049725392EFB408D00EF96E1 /* Inter Rapidísimo */ = {
+			isa = PBXGroup;
+			children = (
+				0497253C2EFB408D00EF96E1 /* ContentView.swift */,
+				0497253E2EFB409000EF96E1 /* Assets.xcassets */,
+				049725402EFB409000EF96E1 /* Preview Content */,
+			);
+			path = "Inter Rapidísimo";
+			sourceTree = "<group>";
+		};
+		049725402EFB409000EF96E1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				049725412EFB409000EF96E1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0497254A2EFB409000EF96E1 /* Inter RapidísimoTests */ = {
+			isa = PBXGroup;
+			children = (
+				0497254B2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift */,
+			);
+			path = "Inter RapidísimoTests";
+			sourceTree = "<group>";
+		};
+		049725542EFB409000EF96E1 /* Inter RapidísimoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				049725552EFB409000EF96E1 /* Inter_Rapidi_simoUITests.swift */,
+				049725572EFB409000EF96E1 /* Inter_Rapidi_simoUITestsLaunchTests.swift */,
+			);
+			path = "Inter RapidísimoUITests";
+			sourceTree = "<group>";
+		};
+		049725642EFB40C800EF96E1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0497253A2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		049725652EFB411D00EF96E1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0497256B2EFB437600EF96E1 /* Utils */,
+				0497256A2EFB436E00EF96E1 /* Database */,
+				049725692EFB41F100EF96E1 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		049725662EFB412600EF96E1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				049725752EFB43ED00EF96E1 /* Photos */,
+				049725742EFB43E600EF96E1 /* Localities */,
+				049725732EFB43DB00EF96E1 /* Tables */,
+				049725722EFB43D400EF96E1 /* Home */,
+				049725712EFB43CC00EF96E1 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		049725672EFB412900EF96E1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				049725702EFB43BA00EF96E1 /* RepositoriesImpl */,
+				0497256F2EFB43AD00EF96E1 /* DTOs */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		049725682EFB412B00EF96E1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0497256E2EFB439B00EF96E1 /* UseCases */,
+				0497256D2EFB439000EF96E1 /* Repositories */,
+				0497256C2EFB438600EF96E1 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		049725692EFB41F100EF96E1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				049725762EFB454C00EF96E1 /* APIClient.swift */,
+				049725782EFB4AA400EF96E1 /* APIError.swift */,
+				0497257A2EFB4AB700EF96E1 /* APIClientProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0497256A2EFB436E00EF96E1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0497257C2EFB4B3B00EF96E1 /* SQLiteManager.swift */,
+				0497257E2EFB4D9900EF96E1 /* SQLiteError.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		0497256B2EFB437600EF96E1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0497256C2EFB438600EF96E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				049725802EFB78D700EF96E1 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0497256D2EFB439000EF96E1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				049725822EFB791200EF96E1 /* UserRepository.swift */,
+				049725882EFB87A600EF96E1 /* AuthRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		0497256E2EFB439B00EF96E1 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		0497256F2EFB43AD00EF96E1 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				049725842EFB85DB00EF96E1 /* LoginResponseDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		049725702EFB43BA00EF96E1 /* RepositoriesImpl */ = {
+			isa = PBXGroup;
+			children = (
+				049725862EFB861E00EF96E1 /* UserRepositoryImpl.swift */,
+				0497258A2EFB887400EF96E1 /* AuthRepositoryImpl.swift */,
+			);
+			path = RepositoriesImpl;
+			sourceTree = "<group>";
+		};
+		049725712EFB43CC00EF96E1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0497258F2EFB89A400EF96E1 /* View */,
+				0497258C2EFB897000EF96E1 /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		049725722EFB43D400EF96E1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				049725922EFB89CA00EF96E1 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		049725732EFB43DB00EF96E1 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		049725742EFB43E600EF96E1 /* Localities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localities;
+			sourceTree = "<group>";
+		};
+		049725752EFB43ED00EF96E1 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		0497258C2EFB897000EF96E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0497258D2EFB898300EF96E1 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0497258F2EFB89A400EF96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049725902EFB89AF00EF96E1 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		049725922EFB89CA00EF96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049725932EFB89D500EF96E1 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		049725362EFB408D00EF96E1 /* Inter Rapidísimo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0497255B2EFB409000EF96E1 /* Build configuration list for PBXNativeTarget "Inter Rapidísimo" */;
+			buildPhases = (
+				049725332EFB408D00EF96E1 /* Sources */,
+				049725342EFB408D00EF96E1 /* Frameworks */,
+				049725352EFB408D00EF96E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Inter Rapidísimo";
+			productName = "Inter Rapidísimo";
+			productReference = 049725372EFB408D00EF96E1 /* Inter Rapidísimo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		049725462EFB409000EF96E1 /* Inter RapidísimoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0497255E2EFB409000EF96E1 /* Build configuration list for PBXNativeTarget "Inter RapidísimoTests" */;
+			buildPhases = (
+				049725432EFB409000EF96E1 /* Sources */,
+				049725442EFB409000EF96E1 /* Frameworks */,
+				049725452EFB409000EF96E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				049725492EFB409000EF96E1 /* PBXTargetDependency */,
+			);
+			name = "Inter RapidísimoTests";
+			productName = "Inter RapidísimoTests";
+			productReference = 049725472EFB409000EF96E1 /* Inter RapidísimoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		049725502EFB409000EF96E1 /* Inter RapidísimoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 049725612EFB409000EF96E1 /* Build configuration list for PBXNativeTarget "Inter RapidísimoUITests" */;
+			buildPhases = (
+				0497254D2EFB409000EF96E1 /* Sources */,
+				0497254E2EFB409000EF96E1 /* Frameworks */,
+				0497254F2EFB409000EF96E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				049725532EFB409000EF96E1 /* PBXTargetDependency */,
+			);
+			name = "Inter RapidísimoUITests";
+			productName = "Inter RapidísimoUITests";
+			productReference = 049725512EFB409000EF96E1 /* Inter RapidísimoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0497252F2EFB408D00EF96E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					049725362EFB408D00EF96E1 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					049725462EFB409000EF96E1 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 049725362EFB408D00EF96E1;
+					};
+					049725502EFB409000EF96E1 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 049725362EFB408D00EF96E1;
+					};
+				};
+			};
+			buildConfigurationList = 049725322EFB408D00EF96E1 /* Build configuration list for PBXProject "Inter Rapidísimo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0497252E2EFB408D00EF96E1;
+			productRefGroup = 049725382EFB408D00EF96E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				049725362EFB408D00EF96E1 /* Inter Rapidísimo */,
+				049725462EFB409000EF96E1 /* Inter RapidísimoTests */,
+				049725502EFB409000EF96E1 /* Inter RapidísimoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		049725352EFB408D00EF96E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049725422EFB409000EF96E1 /* Preview Assets.xcassets in Resources */,
+				0497253F2EFB409000EF96E1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		049725452EFB409000EF96E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0497254F2EFB409000EF96E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		049725332EFB408D00EF96E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0497253D2EFB408D00EF96E1 /* ContentView.swift in Sources */,
+				049725792EFB4AA400EF96E1 /* APIError.swift in Sources */,
+				049725872EFB861E00EF96E1 /* UserRepositoryImpl.swift in Sources */,
+				049725912EFB89AF00EF96E1 /* LoginView.swift in Sources */,
+				049725832EFB791200EF96E1 /* UserRepository.swift in Sources */,
+				0497257B2EFB4AB700EF96E1 /* APIClientProtocol.swift in Sources */,
+				0497257F2EFB4D9900EF96E1 /* SQLiteError.swift in Sources */,
+				0497258E2EFB898300EF96E1 /* LoginViewModel.swift in Sources */,
+				049725812EFB78D700EF96E1 /* User.swift in Sources */,
+				049725852EFB85DB00EF96E1 /* LoginResponseDTO.swift in Sources */,
+				0497257D2EFB4B3B00EF96E1 /* SQLiteManager.swift in Sources */,
+				0497258B2EFB887400EF96E1 /* AuthRepositoryImpl.swift in Sources */,
+				049725892EFB87A600EF96E1 /* AuthRepository.swift in Sources */,
+				049725942EFB89D500EF96E1 /* HomeView.swift in Sources */,
+				0497253B2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift in Sources */,
+				049725772EFB454C00EF96E1 /* APIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		049725432EFB409000EF96E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0497254C2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0497254D2EFB409000EF96E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049725582EFB409000EF96E1 /* Inter_Rapidi_simoUITestsLaunchTests.swift in Sources */,
+				049725562EFB409000EF96E1 /* Inter_Rapidi_simoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		049725492EFB409000EF96E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 049725362EFB408D00EF96E1 /* Inter Rapidísimo */;
+			targetProxy = 049725482EFB409000EF96E1 /* PBXContainerItemProxy */;
+		};
+		049725532EFB409000EF96E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 049725362EFB408D00EF96E1 /* Inter Rapidísimo */;
+			targetProxy = 049725522EFB409000EF96E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		049725592EFB409000EF96E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0497255A2EFB409000EF96E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0497255C2EFB409000EF96E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Inter Rapidísimo/Preview Content\"";
+				DEVELOPMENT_TEAM = U275656J6V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MyApp.Inter-Rapidi-simo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0497255D2EFB409000EF96E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Inter Rapidísimo/Preview Content\"";
+				DEVELOPMENT_TEAM = U275656J6V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MyApp.Inter-Rapidi-simo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0497255F2EFB409000EF96E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U275656J6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MyApp.Inter-Rapidi-simoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inter Rapidísimo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inter Rapidísimo";
+			};
+			name = Debug;
+		};
+		049725602EFB409000EF96E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U275656J6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MyApp.Inter-Rapidi-simoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inter Rapidísimo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inter Rapidísimo";
+			};
+			name = Release;
+		};
+		049725622EFB409000EF96E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U275656J6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MyApp.Inter-Rapidi-simoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Inter Rapidísimo";
+			};
+			name = Debug;
+		};
+		049725632EFB409000EF96E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U275656J6V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MyApp.Inter-Rapidi-simoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Inter Rapidísimo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		049725322EFB408D00EF96E1 /* Build configuration list for PBXProject "Inter Rapidísimo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				049725592EFB409000EF96E1 /* Debug */,
+				0497255A2EFB409000EF96E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0497255B2EFB409000EF96E1 /* Build configuration list for PBXNativeTarget "Inter Rapidísimo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0497255C2EFB409000EF96E1 /* Debug */,
+				0497255D2EFB409000EF96E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0497255E2EFB409000EF96E1 /* Build configuration list for PBXNativeTarget "Inter RapidísimoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0497255F2EFB409000EF96E1 /* Debug */,
+				049725602EFB409000EF96E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		049725612EFB409000EF96E1 /* Build configuration list for PBXNativeTarget "Inter RapidísimoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				049725622EFB409000EF96E1 /* Debug */,
+				049725632EFB409000EF96E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0497252F2EFB408D00EF96E1 /* Project object */;
+}
