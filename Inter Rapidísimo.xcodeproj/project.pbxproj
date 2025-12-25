@@ -28,6 +28,11 @@
 		0497258E2EFB898300EF96E1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497258D2EFB898300EF96E1 /* LoginViewModel.swift */; };
 		049725912EFB89AF00EF96E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725902EFB89AF00EF96E1 /* LoginView.swift */; };
 		049725942EFB89D500EF96E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725932EFB89D500EF96E1 /* HomeView.swift */; };
+		049725962EFC2B3600EF96E1 /* AppVersionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725952EFC2B3600EF96E1 /* AppVersionDTO.swift */; };
+		049725982EFC2B5A00EF96E1 /* VersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725972EFC2B5A00EF96E1 /* VersionRepository.swift */; };
+		0497259A2EFC2B7600EF96E1 /* VersionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725992EFC2B7600EF96E1 /* VersionRepositoryImpl.swift */; };
+		0497259E2EFC2D2400EF96E1 /* VersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497259D2EFC2D2400EF96E1 /* VersionViewModel.swift */; };
+		049725A12EFC2D5400EF96E1 /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725A02EFC2D5400EF96E1 /* VersionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		0497258D2EFB898300EF96E1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		049725902EFB89AF00EF96E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		049725932EFB89D500EF96E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		049725952EFC2B3600EF96E1 /* AppVersionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionDTO.swift; sourceTree = "<group>"; };
+		049725972EFC2B5A00EF96E1 /* VersionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRepository.swift; sourceTree = "<group>"; };
+		049725992EFC2B7600EF96E1 /* VersionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRepositoryImpl.swift; sourceTree = "<group>"; };
+		0497259D2EFC2D2400EF96E1 /* VersionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewModel.swift; sourceTree = "<group>"; };
+		049725A02EFC2D5400EF96E1 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +190,7 @@
 		049725662EFB412600EF96E1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0497259B2EFC2D0D00EF96E1 /* Version */,
 				049725752EFB43ED00EF96E1 /* Photos */,
 				049725742EFB43E600EF96E1 /* Localities */,
 				049725732EFB43DB00EF96E1 /* Tables */,
@@ -247,6 +258,7 @@
 			children = (
 				049725822EFB791200EF96E1 /* UserRepository.swift */,
 				049725882EFB87A600EF96E1 /* AuthRepository.swift */,
+				049725972EFC2B5A00EF96E1 /* VersionRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				049725842EFB85DB00EF96E1 /* LoginResponseDTO.swift */,
+				049725952EFC2B3600EF96E1 /* AppVersionDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -271,6 +284,7 @@
 			children = (
 				049725862EFB861E00EF96E1 /* UserRepositoryImpl.swift */,
 				0497258A2EFB887400EF96E1 /* AuthRepositoryImpl.swift */,
+				049725992EFC2B7600EF96E1 /* VersionRepositoryImpl.swift */,
 			);
 			path = RepositoriesImpl;
 			sourceTree = "<group>";
@@ -333,6 +347,31 @@
 			isa = PBXGroup;
 			children = (
 				049725932EFB89D500EF96E1 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0497259B2EFC2D0D00EF96E1 /* Version */ = {
+			isa = PBXGroup;
+			children = (
+				0497259F2EFC2D4300EF96E1 /* View */,
+				0497259C2EFC2D1700EF96E1 /* ViewModel */,
+			);
+			path = Version;
+			sourceTree = "<group>";
+		};
+		0497259C2EFC2D1700EF96E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0497259D2EFC2D2400EF96E1 /* VersionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0497259F2EFC2D4300EF96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049725A02EFC2D5400EF96E1 /* VersionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -467,18 +506,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0497259A2EFC2B7600EF96E1 /* VersionRepositoryImpl.swift in Sources */,
 				0497253D2EFB408D00EF96E1 /* ContentView.swift in Sources */,
 				049725792EFB4AA400EF96E1 /* APIError.swift in Sources */,
 				049725872EFB861E00EF96E1 /* UserRepositoryImpl.swift in Sources */,
 				049725912EFB89AF00EF96E1 /* LoginView.swift in Sources */,
 				049725832EFB791200EF96E1 /* UserRepository.swift in Sources */,
 				0497257B2EFB4AB700EF96E1 /* APIClientProtocol.swift in Sources */,
+				049725982EFC2B5A00EF96E1 /* VersionRepository.swift in Sources */,
 				0497257F2EFB4D9900EF96E1 /* SQLiteError.swift in Sources */,
 				0497258E2EFB898300EF96E1 /* LoginViewModel.swift in Sources */,
 				049725812EFB78D700EF96E1 /* User.swift in Sources */,
 				049725852EFB85DB00EF96E1 /* LoginResponseDTO.swift in Sources */,
 				0497257D2EFB4B3B00EF96E1 /* SQLiteManager.swift in Sources */,
+				049725A12EFC2D5400EF96E1 /* VersionView.swift in Sources */,
 				0497258B2EFB887400EF96E1 /* AuthRepositoryImpl.swift in Sources */,
+				049725962EFC2B3600EF96E1 /* AppVersionDTO.swift in Sources */,
+				0497259E2EFC2D2400EF96E1 /* VersionViewModel.swift in Sources */,
 				049725892EFB87A600EF96E1 /* AuthRepository.swift in Sources */,
 				049725942EFB89D500EF96E1 /* HomeView.swift in Sources */,
 				0497253B2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift in Sources */,

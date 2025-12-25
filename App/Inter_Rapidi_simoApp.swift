@@ -17,7 +17,11 @@ struct Inter_Rapidi_simoApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                LoginView()
+                let api = APIClient()
+                let repo = VersionRepositoryImpl(api: api)
+                let vm = VersionViewModel(repo: repo)
+                
+                VersionView(viewModel: vm)
             }
         }
     }
