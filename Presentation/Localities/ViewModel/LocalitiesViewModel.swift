@@ -9,26 +9,23 @@ import Foundation
 
 @MainActor
 final class LocalitiesViewModel: ObservableObject {
-
+    
     @Published var items: [Locality] = []
     @Published var isLoading = false
     @Published var error: String?
-
+    
     private let repo: LocalitiesRepository
-
+    
     init(repo: LocalitiesRepository) {
         self.repo = repo
     }
-
+    
     func load() {
         isLoading = true
         Task {
             do {
                 items = try await repo.fetchRemote()
             } catch {
-                #if DEBUG
-                print("⚠️ Remote localities failed, loading local. Error:", error)
-                #endif
                 do {
                     items = try await repo.fetchLocal()
                     if items.isEmpty {
@@ -41,5 +38,4 @@ final class LocalitiesViewModel: ObservableObject {
             isLoading = false
         }
     }
-
 }

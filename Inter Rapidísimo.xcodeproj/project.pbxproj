@@ -46,6 +46,12 @@
 		049725B92EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725B82EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift */; };
 		049725BC2EFE3C0100EF96E1 /* LocalitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725BB2EFE3C0100EF96E1 /* LocalitiesViewModel.swift */; };
 		049725BF2EFE3C2D00EF96E1 /* LocalitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725BE2EFE3C2D00EF96E1 /* LocalitiesView.swift */; };
+		049725C22EFE472700EF96E1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C12EFE472600EF96E1 /* Photo.swift */; };
+		049725C52EFE55CE00EF96E1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C42EFE55CE00EF96E1 /* ImagePicker.swift */; };
+		049725C82EFE562300EF96E1 /* CameraTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C72EFE562300EF96E1 /* CameraTestView.swift */; };
+		049725CA2EFED3B800EF96E1 /* PhotosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C92EFED3B700EF96E1 /* PhotosRepository.swift */; };
+		049725CC2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725CB2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift */; };
+		049725CF2EFED45400EF96E1 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725CE2EFED45400EF96E1 /* PhotosViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +114,12 @@
 		049725B82EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesRepositoryImpl.swift; sourceTree = "<group>"; };
 		049725BB2EFE3C0100EF96E1 /* LocalitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesViewModel.swift; sourceTree = "<group>"; };
 		049725BE2EFE3C2D00EF96E1 /* LocalitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesView.swift; sourceTree = "<group>"; };
+		049725C12EFE472600EF96E1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		049725C42EFE55CE00EF96E1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		049725C72EFE562300EF96E1 /* CameraTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTestView.swift; sourceTree = "<group>"; };
+		049725C92EFED3B700EF96E1 /* PhotosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepository.swift; sourceTree = "<group>"; };
+		049725CB2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepositoryImpl.swift; sourceTree = "<group>"; };
+		049725CE2EFED45400EF96E1 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,9 +286,9 @@
 		0497256C2EFB438600EF96E1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				049725C02EFE462100EF96E1 /* Photos */,
 				049725802EFB78D700EF96E1 /* User.swift */,
 				049725B42EFE3B3400EF96E1 /* Locality.swift */,
+				049725C12EFE472600EF96E1 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +301,7 @@
 				049725972EFC2B5A00EF96E1 /* VersionRepository.swift */,
 				049725A42EFE28F700EF96E1 /* SchemaRepository.swift */,
 				049725B62EFE3B9900EF96E1 /* LocalitiesRepository.swift */,
+				049725C92EFED3B700EF96E1 /* PhotosRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -321,6 +334,7 @@
 				049725A82EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift */,
 				049725AA2EFE2A9B00EF96E1 /* SchemaSyncService.swift */,
 				049725B82EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift */,
+				049725CB2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift */,
 			);
 			path = RepositoriesImpl;
 			sourceTree = "<group>";
@@ -363,6 +377,9 @@
 		049725752EFB43ED00EF96E1 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				049725CD2EFED43900EF96E1 /* ViewModel */,
+				049725C62EFE560C00EF96E1 /* Camera */,
+				049725C32EFE55B400EF96E1 /* ImagePicker */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -448,11 +465,28 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		049725C02EFE462100EF96E1 /* Photos */ = {
+		049725C32EFE55B400EF96E1 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				049725C42EFE55CE00EF96E1 /* ImagePicker.swift */,
 			);
-			path = Photos;
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		049725C62EFE560C00EF96E1 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				049725C72EFE562300EF96E1 /* CameraTestView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		049725CD2EFED43900EF96E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				049725CE2EFED45400EF96E1 /* PhotosViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,21 +632,27 @@
 				049725A52EFE28F700EF96E1 /* SchemaRepository.swift in Sources */,
 				0497257B2EFB4AB700EF96E1 /* APIClientProtocol.swift in Sources */,
 				049725982EFC2B5A00EF96E1 /* VersionRepository.swift in Sources */,
+				049725C22EFE472700EF96E1 /* Photo.swift in Sources */,
 				0497257F2EFB4D9900EF96E1 /* SQLiteError.swift in Sources */,
 				0497258E2EFB898300EF96E1 /* LoginViewModel.swift in Sources */,
 				049725BC2EFE3C0100EF96E1 /* LocalitiesViewModel.swift in Sources */,
+				049725CF2EFED45400EF96E1 /* PhotosViewModel.swift in Sources */,
 				049725812EFB78D700EF96E1 /* User.swift in Sources */,
+				049725CA2EFED3B800EF96E1 /* PhotosRepository.swift in Sources */,
 				049725852EFB85DB00EF96E1 /* LoginResponseDTO.swift in Sources */,
 				0497257D2EFB4B3B00EF96E1 /* SQLiteManager.swift in Sources */,
 				049725AE2EFE2AC900EF96E1 /* TablesViewModel.swift in Sources */,
+				049725C52EFE55CE00EF96E1 /* ImagePicker.swift in Sources */,
 				049725B52EFE3B3400EF96E1 /* Locality.swift in Sources */,
 				049725BF2EFE3C2D00EF96E1 /* LocalitiesView.swift in Sources */,
+				049725C82EFE562300EF96E1 /* CameraTestView.swift in Sources */,
 				049725B92EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift in Sources */,
 				049725A12EFC2D5400EF96E1 /* VersionView.swift in Sources */,
 				049725A92EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift in Sources */,
 				0497258B2EFB887400EF96E1 /* AuthRepositoryImpl.swift in Sources */,
 				049725962EFC2B3600EF96E1 /* AppVersionDTO.swift in Sources */,
 				0497259E2EFC2D2400EF96E1 /* VersionViewModel.swift in Sources */,
+				049725CC2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift in Sources */,
 				049725892EFB87A600EF96E1 /* AuthRepository.swift in Sources */,
 				049725942EFB89D500EF96E1 /* HomeView.swift in Sources */,
 				049725AB2EFE2A9B00EF96E1 /* SchemaSyncService.swift in Sources */,
@@ -785,6 +825,7 @@
 				DEVELOPMENT_TEAM = U275656J6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "La app necesita acceso a la cámara para tomar fotos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -814,6 +855,7 @@
 				DEVELOPMENT_TEAM = U275656J6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "La app necesita acceso a la cámara para tomar fotos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -8,6 +8,8 @@
 import Foundation
 import SQLite3
 
+let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+
 final class SQLiteManager {
     
     // MARK: - Properties
@@ -100,13 +102,10 @@ final class SQLiteManager {
             """
             CREATE TABLE IF NOT EXISTS photos(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                seq INTEGER NOT NULL,
                 name TEXT NOT NULL,
                 date TEXT NOT NULL,
-                image BLOB,
-                user_id INTEGER,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
+                image BLOB NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
             """,
             """
@@ -121,6 +120,34 @@ final class SQLiteManager {
             try performExecute(sql: sql)
         }
     }
+    
+    private func performInsertWithBlob(
+        sql: String,
+        textBindings: [String],
+        blob: Data
+    ) async throws {
+
+        try await queue.sync(flags: .barrier) {
+            var stmt: OpaquePointer?
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                throw SQLiteError.prepare(message: errorMessage)
+            }
+            defer { sqlite3_finalize(stmt) }
+
+            for (index, value) in textBindings.enumerated() {
+                sqlite3_bind_text(stmt, Int32(index + 1), value, -1, SQLITE_TRANSIENT)
+            }
+
+            blob.withUnsafeBytes {
+                sqlite3_bind_blob(stmt, Int32(textBindings.count + 1), $0.baseAddress, Int32(blob.count), SQLITE_TRANSIENT)
+            }
+
+            guard sqlite3_step(stmt) == SQLITE_DONE else {
+                throw SQLiteError.step(message: errorMessage)
+            }
+        }
+    }
+
 
     // MARK: - Public API (async)
 
@@ -266,10 +293,42 @@ final class SQLiteManager {
             ]
             try await saveLocalities(demo)
             #if DEBUG
-            print("🌱 Localities seeded locally")
+            print("Localities seeded locally")
             #endif
         } catch {
-            print("❌ Seed localities failed:", error)
+            print("Seed localities failed:", error)
+        }
+    }
+    
+    func savePhoto(_ photo: Photo) async throws {
+        let dateString = ISO8601DateFormatter().string(from: photo.date)
+
+        let sql = """
+        INSERT INTO photos (name, date, image)
+        VALUES (?, ?, ?);
+        """
+
+        try await performInsertWithBlob(
+            sql: sql,
+            textBindings: [photo.name, dateString],
+            blob: photo.imageData
+        )
+    }
+    
+    func fetchPhotos() async throws -> [Photo] {
+        let sql = "SELECT id, name, date, image FROM photos ORDER BY id DESC;"
+
+        return try await query(sql) { stmt in
+            let id = Int(sqlite3_column_int(stmt, 0))
+            let name = String(cString: sqlite3_column_text(stmt, 1))
+            let dateStr = String(cString: sqlite3_column_text(stmt, 2))
+            let date = ISO8601DateFormatter().date(from: dateStr) ?? Date()
+
+            let size = sqlite3_column_bytes(stmt, 3)
+            let blob = sqlite3_column_blob(stmt, 3)
+            let data = Data(bytes: blob!, count: Int(size))
+
+            return Photo(id: id, name: name, date: date, imageData: data)
         }
     }
 }

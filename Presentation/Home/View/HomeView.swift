@@ -16,6 +16,8 @@ struct HomeView: View {
             List {
                 NavigationLink("📋 Tablas", destination: TablesView())
                 NavigationLink("📍 Localidades", destination: LocalitiesView())
+                //CameraTestView() Esta vista debe ser temporal y reemplazada por la vista que va a ir en su lugar , RECUERDATE YORMAN DE REEMPLAZAR ESTO Y EL FILE DONDE ESTA LA VISTA
+                NavigationLink("📸 Test Cámara", destination: CameraTestView())
             }
             .navigationTitle("Bienvenido \(username)")
         }
