@@ -37,13 +37,14 @@ struct LoginView: View {
                 viewModel.login()
             }
             .disabled(viewModel.isLoading)
-
-            NavigationLink(
-                destination: HomeView(),
-                isActive: $viewModel.isLoggedIn
-            ) {
-                EmptyView()
-            }
+            
+                NavigationLink(
+                    destination: HomeView(username: "user.user"),
+                    isActive: $viewModel.isLoggedIn
+                ) {
+                    EmptyView()
+                }
+            
         }
         .padding()
     }

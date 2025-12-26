@@ -7,81 +7,95 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9E39478A-E519-4218-85EE-8BC197BF63E8"
+            uuid = "9724E562-893A-4C4F-A467-AAA6A2FD5890"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Core/Network/APIClient.swift"
+            filePath = "Presentation/Localities/ViewModel/LocalitiesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "request(_:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "load()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "37C3B70E-9976-4272-8289-0D45D2F66AFA"
+            uuid = "976A9AF8-3A9C-49A5-8710-3D7B5C553387"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Core/Network/APIClient.swift"
+            filePath = "Presentation/Localities/ViewModel/LocalitiesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "request(_:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "load()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "408FB421-AA35-48DD-9049-B3A985DDC2F8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Core/Network/APIClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "request(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F00D440E-5F81-49BC-B1EB-BDBE61C5C82B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Core/Network/APIClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "request(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7AA4C58D-50E8-4CCD-94B3-B3E558B49A23"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Data/RepositoriesImpl/AuthRepositoryImpl.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "login()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "976A9AF8-3A9C-49A5-8710-3D7B5C553387 - 2c689ca8d6cc500b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Inter_Rapid&#xed;simo.LocalitiesViewModel.load() -&gt; ()"
+                  moduleName = "Inter Rapidi&#x301;simo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/Inter%20Rapidi%CC%81simo/Presentation/Localities/ViewModel/LocalitiesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "976A9AF8-3A9C-49A5-8710-3D7B5C553387 - 74a7914c70a51409"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Inter_Rapid&#xed;simo.LocalitiesViewModel.load() -&gt; ()"
+                  moduleName = "Inter Rapidi&#x301;simo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/Inter%20Rapidi%CC%81simo/Presentation/Localities/ViewModel/LocalitiesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "502">
+               </Location>
+               <Location
+                  uuid = "976A9AF8-3A9C-49A5-8710-3D7B5C553387 - 1a4822d9e63d7086"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) await resume partial function for closure #1 @Sendable () async -&gt; () in Inter_Rapid&#xed;simo.LocalitiesViewModel.load() -&gt; ()"
+                  moduleName = "Inter Rapidi&#x301;simo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/Inter%20Rapidi%CC%81simo/Presentation/Localities/ViewModel/LocalitiesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  uuid = "976A9AF8-3A9C-49A5-8710-3D7B5C553387 - a355a912a453ac05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Inter_Rapid&#xed;simo.LocalitiesViewModel.load() -&gt; ()"
+                  moduleName = "Inter Rapidi&#x301;simo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/Inter%20Rapidi%CC%81simo/Presentation/Localities/ViewModel/LocalitiesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "103">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

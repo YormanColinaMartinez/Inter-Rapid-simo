@@ -8,21 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var user: User?
+
+    let username: String
 
     var body: some View {
-        VStack {
-            if let user {
-                Text(user.name)
-                Text(user.id)
-            } else {
-                Text("Sin usuario")
+        NavigationView {
+            List {
+                NavigationLink("📋 Tablas", destination: TablesView())
+                NavigationLink("📍 Localidades", destination: LocalitiesView())
             }
-        }
-        .task {
-            let repo = UserRepositoryImpl()
-            user = try? await repo.getUser()
+            .navigationTitle("Bienvenido \(username)")
         }
     }
 }
-

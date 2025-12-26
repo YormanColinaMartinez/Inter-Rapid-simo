@@ -33,6 +33,19 @@
 		0497259A2EFC2B7600EF96E1 /* VersionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725992EFC2B7600EF96E1 /* VersionRepositoryImpl.swift */; };
 		0497259E2EFC2D2400EF96E1 /* VersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497259D2EFC2D2400EF96E1 /* VersionViewModel.swift */; };
 		049725A12EFC2D5400EF96E1 /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725A02EFC2D5400EF96E1 /* VersionView.swift */; };
+		049725A32EFE28AD00EF96E1 /* SchemaTableDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725A22EFE28AD00EF96E1 /* SchemaTableDTO.swift */; };
+		049725A52EFE28F700EF96E1 /* SchemaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725A42EFE28F700EF96E1 /* SchemaRepository.swift */; };
+		049725A72EFE292900EF96E1 /* SchemaRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725A62EFE292900EF96E1 /* SchemaRepositoryImpl.swift */; };
+		049725A92EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725A82EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift */; };
+		049725AB2EFE2A9B00EF96E1 /* SchemaSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725AA2EFE2A9B00EF96E1 /* SchemaSyncService.swift */; };
+		049725AE2EFE2AC900EF96E1 /* TablesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725AD2EFE2AC900EF96E1 /* TablesViewModel.swift */; };
+		049725B12EFE2B6D00EF96E1 /* TablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725B02EFE2B6D00EF96E1 /* TablesView.swift */; };
+		049725B32EFE3B1000EF96E1 /* LocalityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725B22EFE3B1000EF96E1 /* LocalityDTO.swift */; };
+		049725B52EFE3B3400EF96E1 /* Locality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725B42EFE3B3400EF96E1 /* Locality.swift */; };
+		049725B72EFE3B9900EF96E1 /* LocalitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725B62EFE3B9900EF96E1 /* LocalitiesRepository.swift */; };
+		049725B92EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725B82EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift */; };
+		049725BC2EFE3C0100EF96E1 /* LocalitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725BB2EFE3C0100EF96E1 /* LocalitiesViewModel.swift */; };
+		049725BF2EFE3C2D00EF96E1 /* LocalitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725BE2EFE3C2D00EF96E1 /* LocalitiesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +95,19 @@
 		049725992EFC2B7600EF96E1 /* VersionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRepositoryImpl.swift; sourceTree = "<group>"; };
 		0497259D2EFC2D2400EF96E1 /* VersionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewModel.swift; sourceTree = "<group>"; };
 		049725A02EFC2D5400EF96E1 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
+		049725A22EFE28AD00EF96E1 /* SchemaTableDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaTableDTO.swift; sourceTree = "<group>"; };
+		049725A42EFE28F700EF96E1 /* SchemaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaRepository.swift; sourceTree = "<group>"; };
+		049725A62EFE292900EF96E1 /* SchemaRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaRepositoryImpl.swift; sourceTree = "<group>"; };
+		049725A82EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaLocalRepositoryImpl.swift; sourceTree = "<group>"; };
+		049725AA2EFE2A9B00EF96E1 /* SchemaSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaSyncService.swift; sourceTree = "<group>"; };
+		049725AD2EFE2AC900EF96E1 /* TablesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesViewModel.swift; sourceTree = "<group>"; };
+		049725B02EFE2B6D00EF96E1 /* TablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesView.swift; sourceTree = "<group>"; };
+		049725B22EFE3B1000EF96E1 /* LocalityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalityDTO.swift; sourceTree = "<group>"; };
+		049725B42EFE3B3400EF96E1 /* Locality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locality.swift; sourceTree = "<group>"; };
+		049725B62EFE3B9900EF96E1 /* LocalitiesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesRepository.swift; sourceTree = "<group>"; };
+		049725B82EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesRepositoryImpl.swift; sourceTree = "<group>"; };
+		049725BB2EFE3C0100EF96E1 /* LocalitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesViewModel.swift; sourceTree = "<group>"; };
+		049725BE2EFE3C2D00EF96E1 /* LocalitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +274,9 @@
 		0497256C2EFB438600EF96E1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				049725C02EFE462100EF96E1 /* Photos */,
 				049725802EFB78D700EF96E1 /* User.swift */,
+				049725B42EFE3B3400EF96E1 /* Locality.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +287,8 @@
 				049725822EFB791200EF96E1 /* UserRepository.swift */,
 				049725882EFB87A600EF96E1 /* AuthRepository.swift */,
 				049725972EFC2B5A00EF96E1 /* VersionRepository.swift */,
+				049725A42EFE28F700EF96E1 /* SchemaRepository.swift */,
+				049725B62EFE3B9900EF96E1 /* LocalitiesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -275,6 +305,8 @@
 			children = (
 				049725842EFB85DB00EF96E1 /* LoginResponseDTO.swift */,
 				049725952EFC2B3600EF96E1 /* AppVersionDTO.swift */,
+				049725A22EFE28AD00EF96E1 /* SchemaTableDTO.swift */,
+				049725B22EFE3B1000EF96E1 /* LocalityDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -285,6 +317,10 @@
 				049725862EFB861E00EF96E1 /* UserRepositoryImpl.swift */,
 				0497258A2EFB887400EF96E1 /* AuthRepositoryImpl.swift */,
 				049725992EFC2B7600EF96E1 /* VersionRepositoryImpl.swift */,
+				049725A62EFE292900EF96E1 /* SchemaRepositoryImpl.swift */,
+				049725A82EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift */,
+				049725AA2EFE2A9B00EF96E1 /* SchemaSyncService.swift */,
+				049725B82EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift */,
 			);
 			path = RepositoriesImpl;
 			sourceTree = "<group>";
@@ -309,6 +345,8 @@
 		049725732EFB43DB00EF96E1 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
+				049725AF2EFE2B6100EF96E1 /* View */,
+				049725AC2EFE2AB900EF96E1 /* ViewModel */,
 			);
 			path = Tables;
 			sourceTree = "<group>";
@@ -316,6 +354,8 @@
 		049725742EFB43E600EF96E1 /* Localities */ = {
 			isa = PBXGroup;
 			children = (
+				049725BD2EFE3C2400EF96E1 /* View */,
+				049725BA2EFE3BF000EF96E1 /* ViewModel */,
 			);
 			path = Localities;
 			sourceTree = "<group>";
@@ -374,6 +414,45 @@
 				049725A02EFC2D5400EF96E1 /* VersionView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		049725AC2EFE2AB900EF96E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				049725AD2EFE2AC900EF96E1 /* TablesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		049725AF2EFE2B6100EF96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049725B02EFE2B6D00EF96E1 /* TablesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		049725BA2EFE3BF000EF96E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				049725BB2EFE3C0100EF96E1 /* LocalitiesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		049725BD2EFE3C2400EF96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049725BE2EFE3C2D00EF96E1 /* LocalitiesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		049725C02EFE462100EF96E1 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,27 +585,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049725A72EFE292900EF96E1 /* SchemaRepositoryImpl.swift in Sources */,
 				0497259A2EFC2B7600EF96E1 /* VersionRepositoryImpl.swift in Sources */,
 				0497253D2EFB408D00EF96E1 /* ContentView.swift in Sources */,
 				049725792EFB4AA400EF96E1 /* APIError.swift in Sources */,
+				049725A32EFE28AD00EF96E1 /* SchemaTableDTO.swift in Sources */,
+				049725B12EFE2B6D00EF96E1 /* TablesView.swift in Sources */,
 				049725872EFB861E00EF96E1 /* UserRepositoryImpl.swift in Sources */,
 				049725912EFB89AF00EF96E1 /* LoginView.swift in Sources */,
 				049725832EFB791200EF96E1 /* UserRepository.swift in Sources */,
+				049725B72EFE3B9900EF96E1 /* LocalitiesRepository.swift in Sources */,
+				049725A52EFE28F700EF96E1 /* SchemaRepository.swift in Sources */,
 				0497257B2EFB4AB700EF96E1 /* APIClientProtocol.swift in Sources */,
 				049725982EFC2B5A00EF96E1 /* VersionRepository.swift in Sources */,
 				0497257F2EFB4D9900EF96E1 /* SQLiteError.swift in Sources */,
 				0497258E2EFB898300EF96E1 /* LoginViewModel.swift in Sources */,
+				049725BC2EFE3C0100EF96E1 /* LocalitiesViewModel.swift in Sources */,
 				049725812EFB78D700EF96E1 /* User.swift in Sources */,
 				049725852EFB85DB00EF96E1 /* LoginResponseDTO.swift in Sources */,
 				0497257D2EFB4B3B00EF96E1 /* SQLiteManager.swift in Sources */,
+				049725AE2EFE2AC900EF96E1 /* TablesViewModel.swift in Sources */,
+				049725B52EFE3B3400EF96E1 /* Locality.swift in Sources */,
+				049725BF2EFE3C2D00EF96E1 /* LocalitiesView.swift in Sources */,
+				049725B92EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift in Sources */,
 				049725A12EFC2D5400EF96E1 /* VersionView.swift in Sources */,
+				049725A92EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift in Sources */,
 				0497258B2EFB887400EF96E1 /* AuthRepositoryImpl.swift in Sources */,
 				049725962EFC2B3600EF96E1 /* AppVersionDTO.swift in Sources */,
 				0497259E2EFC2D2400EF96E1 /* VersionViewModel.swift in Sources */,
 				049725892EFB87A600EF96E1 /* AuthRepository.swift in Sources */,
 				049725942EFB89D500EF96E1 /* HomeView.swift in Sources */,
+				049725AB2EFE2A9B00EF96E1 /* SchemaSyncService.swift in Sources */,
 				0497253B2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift in Sources */,
 				049725772EFB454C00EF96E1 /* APIClient.swift in Sources */,
+				049725B32EFE3B1000EF96E1 /* LocalityDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

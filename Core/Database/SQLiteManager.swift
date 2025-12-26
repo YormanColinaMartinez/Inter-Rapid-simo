@@ -108,6 +108,12 @@ final class SQLiteManager {
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
             );
+            """,
+            """
+            CREATE TABLE IF NOT EXISTS locality(
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL
+            );
             """
         ]
 
@@ -204,5 +210,66 @@ final class SQLiteManager {
             results.append(try mapper(stmt))
         }
         return results
+    }
+    
+    func saveUser(_ user: User) async throws {
+        let sql = """
+        INSERT OR REPLACE INTO user (usuario, identificacion, nombre)
+        VALUES ('\(user.user)', '\(user.id)', '\(user.name)');
+        """
+        try await execute(sql)
+    }
+
+    func fetchUser() async throws -> User? {
+        let sql = "SELECT usuario, identificacion, nombre FROM user LIMIT 1;"
+        
+        let users = try await query(sql) { stmt in
+            let user = String(cString: sqlite3_column_text(stmt, 0))
+            let id = String(cString: sqlite3_column_text(stmt, 1))
+            let name = String(cString: sqlite3_column_text(stmt, 2))
+            return User(user: user, id: id, name: name)
+        }
+        
+        return users.first
+    }
+    
+    func saveLocalities(_ items: [Locality]) async throws {
+        for loc in items {
+            let sql = """
+            INSERT OR REPLACE INTO locality (id, name)
+            VALUES (\(loc.id), '\(loc.name)');
+            """
+            try await execute(sql)
+        }
+    }
+
+    func fetchLocalities() async throws -> [Locality] {
+        let sql = "SELECT id, name FROM locality ORDER BY name;"
+        
+        return try await query(sql) { stmt in
+            let id = Int(sqlite3_column_int(stmt, 0))
+            let name = String(cString: sqlite3_column_text(stmt, 1))
+            return Locality(id: id, name: name)
+        }
+    }
+    
+    // ESTE METODODO ES TEMPORAL, DEBE SER REMOVIDO
+    func seedLocalitiesIfNeeded() async {
+        do {
+            let existing = try await fetchLocalities()
+            if !existing.isEmpty { return }
+
+            let demo = [
+                Locality(id: 1, name: "Bogotá D.C."),
+                Locality(id: 2, name: "Medellín"),
+                Locality(id: 3, name: "Cali")
+            ]
+            try await saveLocalities(demo)
+            #if DEBUG
+            print("🌱 Localities seeded locally")
+            #endif
+        } catch {
+            print("❌ Seed localities failed:", error)
+        }
     }
 }

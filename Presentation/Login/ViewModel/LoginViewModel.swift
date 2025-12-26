@@ -13,6 +13,7 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var isLoggedIn = false
+    @Published var loggedUser: User?
 
     private let authRepo: AuthRepository
     private let userRepo: UserRepository
