@@ -9,17 +9,58 @@ import SwiftUI
 
 struct HomeView: View {
 
-    let username: String
+    @StateObject private var viewModel = HomeViewModel()
+    @State private var goToLogin = false
 
     var body: some View {
-        NavigationView {
-            List {
-                NavigationLink("📋 Tablas", destination: TablesView())
-                NavigationLink("📍 Localidades", destination: LocalitiesView())
-                //CameraTestView() Esta vista debe ser temporal y reemplazada por la vista que va a ir en su lugar , RECUERDATE YORMAN DE REEMPLAZAR ESTO Y EL FILE DONDE ESTA LA VISTA
-                NavigationLink("📸 Test Cámara", destination: CameraTestView())
+        NavigationStack {
+            VStack(spacing: 24) {
+
+                if let user = viewModel.user {
+                    VStack(spacing: 8) {
+                        Text("Bienvenido")
+                            .font(.headline)
+
+                        Text(user.name)
+                            .font(.title2)
+                            .bold()
+
+                        Text("Usuario: \(user.user)")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                }
+
+                Divider()
+
+                List {
+                    NavigationLink("📋 Tablas", destination: TablesView())
+                    NavigationLink("📍 Localidades", destination: LocalitiesView())
+                    NavigationLink("📸 Test Cámara", destination: CameraTestView())
+                    NavigationLink("📸 Fotos", destination: PhotosListView())
+                }
+                .listStyle(.insetGrouped)
+
             }
-            .navigationTitle("Bienvenido \(username)")
+            .navigationDestination(isPresented: $goToLogin) {
+                LoginView()
+            }
+            .navigationTitle("Inicio")
+            .onAppear {
+                Task {
+                    await viewModel.loadUser()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Salir") {
+                        Task {
+                            await viewModel.logout()
+                            goToLogin = true
+                        }
+                    }
+                }
+            }
         }
     }
 }

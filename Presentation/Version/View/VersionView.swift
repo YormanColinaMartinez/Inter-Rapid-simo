@@ -16,8 +16,15 @@ struct VersionView: View {
         VStack {
             if viewModel.isLoading {
                 ProgressView("Validando versión...")
-            } else if viewModel.isVersionValid || !viewModel.isVersionValid {
-                LoginView()
+            } else {
+                switch viewModel.route {
+                case .home:
+                    HomeView()
+                case .login:
+                    LoginView()
+                case .none:
+                    EmptyView()
+                }
             }
         }
         .padding()
@@ -27,13 +34,15 @@ struct VersionView: View {
         .onChange(of: viewModel.errorMessage) { _, newValue in
             showAlert = newValue != nil
         }
-        .alert("Control de versión",
-               isPresented: $showAlert,
-               actions: {
-                   Button("Aceptar", role: .cancel) { }
-               },
-               message: {
-                   Text(viewModel.errorMessage ?? "")
-               })
+        .alert(
+            "Control de versión",
+            isPresented: $showAlert,
+            actions: {
+                Button("Aceptar", role: .cancel) { }
+            },
+            message: {
+                Text(viewModel.errorMessage ?? "")
+            }
+        )
     }
 }

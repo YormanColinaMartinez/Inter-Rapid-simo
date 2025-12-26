@@ -21,16 +21,10 @@ final class SQLiteManager {
 
     private init() {
         do {
-            #if DEBUG
-            print("📁 DB Path: \(try databasePath())")
-            #endif
             try openDatabase()
             try enableForeignKeys()
             try createTables()
         } catch {
-            #if DEBUG
-            print(" SQLite init failed: \(error.localizedDescription)")
-            #endif
             db = nil
         }
     }
@@ -280,26 +274,6 @@ final class SQLiteManager {
         }
     }
     
-    // ESTE METODODO ES TEMPORAL, DEBE SER REMOVIDO
-    func seedLocalitiesIfNeeded() async {
-        do {
-            let existing = try await fetchLocalities()
-            if !existing.isEmpty { return }
-
-            let demo = [
-                Locality(id: 1, name: "Bogotá D.C."),
-                Locality(id: 2, name: "Medellín"),
-                Locality(id: 3, name: "Cali")
-            ]
-            try await saveLocalities(demo)
-            #if DEBUG
-            print("Localities seeded locally")
-            #endif
-        } catch {
-            print("Seed localities failed:", error)
-        }
-    }
-    
     func savePhoto(_ photo: Photo) async throws {
         let dateString = ISO8601DateFormatter().string(from: photo.date)
 
@@ -330,5 +304,10 @@ final class SQLiteManager {
 
             return Photo(id: id, name: name, date: date, imageData: data)
         }
+    }
+    
+    func deleteUser() async throws {
+        let sql = "DELETE FROM user;"
+        try await execute(sql)
     }
 }

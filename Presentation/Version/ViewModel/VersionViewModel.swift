@@ -13,6 +13,7 @@ final class VersionViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var errorMessage: String?
     @Published var isVersionValid = false
+    @Published var route: VersionRoute = .none
     
     private let repo: VersionRepository
     
@@ -24,29 +25,39 @@ final class VersionViewModel: ObservableObject {
         Task {
             do {
                 let dto = try await repo.validateVersion()
-                
+
                 let remoteVersion = dto.version
                 let localVersion = Bundle.main
                     .infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
-                
+
                 switch localVersion.compareVersion(to: remoteVersion) {
+
                 case .lower:
                     errorMessage = "Hay una nueva versión disponible (\(remoteVersion)). Por favor actualiza la app."
-                    
+                    if let _ = try await SQLiteManager.shared.fetchUser() {
+                        route = .home
+                    } else {
+                        route = .login
+                    }
                 case .higher:
                     errorMessage = "La versión instalada (\(localVersion)) es superior a la del servidor (\(remoteVersion)). Ambiente inconsistente."
-                    
+
                 case .equal:
-                    isVersionValid = true
+                    if let _ = try await SQLiteManager.shared.fetchUser() {
+                        route = .home
+                    } else {
+                        route = .login
+                    }
                 }
                 
             } catch {
                 errorMessage = error.localizedDescription
             }
-            
+
             isLoading = false
         }
     }
+
 }
 
 
@@ -75,4 +86,10 @@ enum VersionComparison {
     case lower
     case equal
     case higher
+}
+
+enum VersionRoute {
+    case none
+    case login
+    case home
 }

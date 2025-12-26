@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Photo {
+struct Photo: Identifiable {
     let id: Int?
     let name: String
     let date: Date

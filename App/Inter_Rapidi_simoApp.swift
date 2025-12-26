@@ -12,9 +12,6 @@ struct Inter_Rapidi_simoApp: App {
     
     init() {
         _ = SQLiteManager.shared
-        Task {
-            await SQLiteManager.shared.seedLocalitiesIfNeeded()
-        }
     }
     
     var body: some Scene {

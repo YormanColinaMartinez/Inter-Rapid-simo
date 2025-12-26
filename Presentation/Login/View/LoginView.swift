@@ -39,7 +39,7 @@ struct LoginView: View {
             .disabled(viewModel.isLoading)
             
                 NavigationLink(
-                    destination: HomeView(username: "user.user"),
+                    destination: HomeView(),
                     isActive: $viewModel.isLoggedIn
                 ) {
                     EmptyView()
