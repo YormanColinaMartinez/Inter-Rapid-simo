@@ -51,17 +51,22 @@ final class VersionViewModel: ObservableObject {
 
 
 extension String {
+    
     func compareVersion(to other: String) -> VersionComparison {
-        let localNumber = Int(self.replacingOccurrences(of: ".", with: "")) ?? 0
-        let remoteNumber = Int(other.replacingOccurrences(of: ".", with: "")) ?? 0
+        let localNum = self.cleanedVersion().asVersionNumber
+        let remoteNum = other.cleanedVersion().asVersionNumber
         
-        if localNumber < remoteNumber {
-            return .lower
-        } else if localNumber > remoteNumber {
-            return .higher
-        } else {
-            return .equal
-        }
+        if localNum < remoteNum { return .lower }
+        if localNum > remoteNum { return .higher }
+        return .equal
+    }
+    
+    private var asVersionNumber: Int {
+        return Int(self.replacingOccurrences(of: ".", with: "")) ?? 0
+    }
+    
+    private func cleanedVersion() -> String {
+        return self.filter { $0.isNumber || $0 == "." }
     }
 }
 
