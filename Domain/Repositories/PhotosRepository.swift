@@ -10,4 +10,5 @@ import Foundation
 protocol PhotoRepository {
     func save(photo: Photo) async throws
     func fetchAll() async throws -> [Photo]
+    func nextSequence() async throws -> Int
 }

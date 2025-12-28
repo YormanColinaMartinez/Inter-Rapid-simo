@@ -96,6 +96,7 @@ final class SQLiteManager {
             """
             CREATE TABLE IF NOT EXISTS photos(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+                seq INTEGER NOT NULL,
                 name TEXT NOT NULL,
                 date TEXT NOT NULL,
                 image BLOB NOT NULL,
@@ -274,23 +275,27 @@ final class SQLiteManager {
         }
     }
     
-    func savePhoto(_ photo: Photo) async throws {
+    func savePhoto(_ photo: Photo, seq: Int) async throws {
         let dateString = ISO8601DateFormatter().string(from: photo.date)
 
         let sql = """
-        INSERT INTO photos (name, date, image)
-        VALUES (?, ?, ?);
+        INSERT INTO photos (seq, name, date, image)
+        VALUES (?, ?, ?, ?);
         """
 
         try await performInsertWithBlob(
             sql: sql,
-            textBindings: [photo.name, dateString],
+            textBindings: [
+                String(seq),
+                photo.name,
+                dateString
+            ],
             blob: photo.imageData
         )
     }
     
     func fetchPhotos() async throws -> [Photo] {
-        let sql = "SELECT id, name, date, image FROM photos ORDER BY id DESC;"
+        let sql = "SELECT id, name, date, image FROM photos ORDER BY seq DESC;"
 
         return try await query(sql) { stmt in
             let id = Int(sqlite3_column_int(stmt, 0))
@@ -304,6 +309,16 @@ final class SQLiteManager {
 
             return Photo(id: id, name: name, date: date, imageData: data)
         }
+    }
+    
+    func nextPhotoSequence() async throws -> Int {
+        let sql = "SELECT IFNULL(MAX(seq), 0) + 1 FROM photos;"
+
+        let result = try await query(sql) { stmt in
+            Int(sqlite3_column_int(stmt, 0))
+        }
+
+        return result.first ?? 1
     }
     
     func deleteUser() async throws {

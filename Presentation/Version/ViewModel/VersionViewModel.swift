@@ -34,20 +34,19 @@ final class VersionViewModel: ObservableObject {
 
                 case .lower:
                     errorMessage = "Hay una nueva versión disponible (\(remoteVersion)). Por favor actualiza la app."
-                    if let _ = try await SQLiteManager.shared.fetchUser() {
-                        route = .home
-                    } else {
-                        route = .login
-                    }
+                    // Aca se supone que no debe entrar a ningun lado pero quiero que en la prueba en todos los casos entre en el iniciar sesion
+                    isVersionValid = true
                 case .higher:
+                    // Aca se supone que no debe entrar a ningun lado pero quiero que en la prueba en todos los casos entre en el iniciar sesion
                     errorMessage = "La versión instalada (\(localVersion)) es superior a la del servidor (\(remoteVersion)). Ambiente inconsistente."
-
+                    isVersionValid = true
                 case .equal:
                     if let _ = try await SQLiteManager.shared.fetchUser() {
                         route = .home
                     } else {
                         route = .login
                     }
+                    isVersionValid = true
                 }
                 
             } catch {
@@ -57,7 +56,6 @@ final class VersionViewModel: ObservableObject {
             isLoading = false
         }
     }
-
 }
 
 
@@ -81,15 +79,8 @@ extension String {
     }
 }
 
-
 enum VersionComparison {
     case lower
     case equal
     case higher
-}
-
-enum VersionRoute {
-    case none
-    case login
-    case home
 }

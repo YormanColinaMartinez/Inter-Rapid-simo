@@ -11,8 +11,13 @@ final class PhotoRepositoryImpl: PhotoRepository {
 
     private let db = SQLiteManager.shared
 
+    func nextSequence() async throws -> Int {
+        try await db.nextPhotoSequence()
+    }
+
     func save(photo: Photo) async throws {
-        try await db.savePhoto(photo)
+        let seq = try await nextSequence()
+        try await db.savePhoto(photo, seq: seq)
     }
 
     func fetchAll() async throws -> [Photo] {

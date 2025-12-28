@@ -8,57 +8,81 @@
 import SwiftUI
 
 struct HomeView: View {
-
+    @EnvironmentObject private var session: SessionViewModel
     @StateObject private var viewModel = HomeViewModel()
-    @State private var goToLogin = false
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 24) {
+            ScrollView {
+                VStack(spacing: 32) {
 
-                if let user = viewModel.user {
-                    VStack(spacing: 8) {
-                        Text("Bienvenido")
-                            .font(.headline)
+                    // MARK: - Header
+                    if let user = viewModel.user {
+                        VStack(spacing: 6) {
+                            Text("Bienvenido")
+                                .font(.headline)
+                                .foregroundColor(.secondary)
 
-                        Text(user.name)
-                            .font(.title2)
-                            .bold()
+                            Text(user.name)
+                                .font(.title)
+                                .fontWeight(.semibold)
 
-                        Text("Usuario: \(user.user)")
-                            .font(.caption)
-                            .foregroundColor(.gray)
+                            Text(user.user)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(.ultraThinMaterial)
+                        )
+                        .padding(.horizontal)
                     }
+
+                    // MARK: - Modules
+                    VStack(spacing: 16) {
+
+                        HomeCard(
+                            title: "Tablas",
+                            subtitle: "Estructura y datos locales",
+                            systemImage: "list.bullet.rectangle",
+                            destination: TablesView()
+                        )
+
+                        HomeCard(
+                            title: "Localidades",
+                            subtitle: "Consulta y persistencia",
+                            systemImage: "mappin.and.ellipse",
+                            destination: LocalitiesView()
+                        )
+
+                        HomeCard(
+                            title: "Fotos",
+                            subtitle: "Captura y almacenamiento",
+                            systemImage: "camera.on.rectangle",
+                            destination: PhotosListView()
+                        )
+                    }
+                    .padding(.horizontal)
                 }
-
-                Divider()
-
-                List {
-                    NavigationLink("📋 Tablas", destination: TablesView())
-                    NavigationLink("📍 Localidades", destination: LocalitiesView())
-                    NavigationLink("📸 Test Cámara", destination: CameraTestView())
-                    NavigationLink("📸 Fotos", destination: PhotosListView())
-                }
-                .listStyle(.insetGrouped)
-
-            }
-            .navigationDestination(isPresented: $goToLogin) {
-                LoginView()
+                .padding(.top, 24)
             }
             .navigationTitle("Inicio")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(role: .destructive) {
+                        Task {
+                            await session.logout()
+                        }
+                    } label: {
+                        Image(systemName: "arrow.right.square")
+                    } 
+                }
+            }
             .onAppear {
                 Task {
                     await viewModel.loadUser()
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Salir") {
-                        Task {
-                            await viewModel.logout()
-                            goToLogin = true
-                        }
-                    }
                 }
             }
         }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PhotoRowView: View {
-
+    let isSelected: Bool
     let photo: Photo
 
     var body: some View {
@@ -32,5 +32,9 @@ struct PhotoRowView: View {
             }
         }
         .padding(.vertical, 4)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(isSelected ? Color.blue.opacity(0.15) : Color.clear)
+        )
     }
 }

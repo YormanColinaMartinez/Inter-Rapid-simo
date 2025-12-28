@@ -56,6 +56,10 @@
 		049725D52EFEF04F00EF96E1 /* PhotoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725D42EFEF04F00EF96E1 /* PhotoRowView.swift */; };
 		049725D72EFEF50B00EF96E1 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725D62EFEF50B00EF96E1 /* PhotoDetailView.swift */; };
 		049725DA2EFEF63100EF96E1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725D92EFEF63100EF96E1 /* HomeViewModel.swift */; };
+		049725DD2EFF533200EF96E1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725DC2EFF533200EF96E1 /* Strings.swift */; };
+		049725DF2EFF697100EF96E1 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725DE2EFF697100EF96E1 /* HomeCard.swift */; };
+		049725E12EFF852F00EF96E1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725E02EFF852F00EF96E1 /* RootView.swift */; };
+		049725E62EFF857700EF96E1 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725E52EFF857700EF96E1 /* SessionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +132,10 @@
 		049725D42EFEF04F00EF96E1 /* PhotoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRowView.swift; sourceTree = "<group>"; };
 		049725D62EFEF50B00EF96E1 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		049725D92EFEF63100EF96E1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		049725DC2EFF533200EF96E1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		049725DE2EFF697100EF96E1 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
+		049725E02EFF852F00EF96E1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		049725E52EFF857700EF96E1 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +244,7 @@
 		049725662EFB412600EF96E1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				049725E22EFF854D00EF96E1 /* Session */,
 				0497259B2EFC2D0D00EF96E1 /* Version */,
 				049725752EFB43ED00EF96E1 /* Photos */,
 				049725742EFB43E600EF96E1 /* Localities */,
@@ -287,6 +296,7 @@
 		0497256B2EFB437600EF96E1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				049725DB2EFF52D700EF96E1 /* Strings */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -359,8 +369,8 @@
 		049725722EFB43D400EF96E1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				049725D82EFEF61700EF96E1 /* ViewModel */,
 				049725922EFB89CA00EF96E1 /* View */,
+				049725D82EFEF61700EF96E1 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -414,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				049725932EFB89D500EF96E1 /* HomeView.swift */,
+				049725DE2EFF697100EF96E1 /* HomeCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +524,39 @@
 			isa = PBXGroup;
 			children = (
 				049725D92EFEF63100EF96E1 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		049725DB2EFF52D700EF96E1 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				049725DC2EFF533200EF96E1 /* Strings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		049725E22EFF854D00EF96E1 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				049725E42EFF856100EF96E1 /* ViewModel */,
+				049725E32EFF855800EF96E1 /* View */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		049725E32EFF855800EF96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049725E02EFF852F00EF96E1 /* RootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		049725E42EFF856100EF96E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				049725E52EFF857700EF96E1 /* SessionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -648,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049725A72EFE292900EF96E1 /* SchemaRepositoryImpl.swift in Sources */,
+				049725E62EFF857700EF96E1 /* SessionViewModel.swift in Sources */,
 				0497259A2EFC2B7600EF96E1 /* VersionRepositoryImpl.swift in Sources */,
 				0497253D2EFB408D00EF96E1 /* ContentView.swift in Sources */,
 				049725792EFB4AA400EF96E1 /* APIError.swift in Sources */,
@@ -663,6 +708,7 @@
 				049725C22EFE472700EF96E1 /* Photo.swift in Sources */,
 				0497257F2EFB4D9900EF96E1 /* SQLiteError.swift in Sources */,
 				0497258E2EFB898300EF96E1 /* LoginViewModel.swift in Sources */,
+				049725E12EFF852F00EF96E1 /* RootView.swift in Sources */,
 				049725BC2EFE3C0100EF96E1 /* LocalitiesViewModel.swift in Sources */,
 				049725CF2EFED45400EF96E1 /* PhotosViewModel.swift in Sources */,
 				049725812EFB78D700EF96E1 /* User.swift in Sources */,
@@ -675,6 +721,7 @@
 				049725D52EFEF04F00EF96E1 /* PhotoRowView.swift in Sources */,
 				049725C52EFE55CE00EF96E1 /* ImagePicker.swift in Sources */,
 				049725B52EFE3B3400EF96E1 /* Locality.swift in Sources */,
+				049725DF2EFF697100EF96E1 /* HomeCard.swift in Sources */,
 				049725BF2EFE3C2D00EF96E1 /* LocalitiesView.swift in Sources */,
 				049725C82EFE562300EF96E1 /* CameraTestView.swift in Sources */,
 				049725B92EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift in Sources */,
@@ -684,6 +731,7 @@
 				049725962EFC2B3600EF96E1 /* AppVersionDTO.swift in Sources */,
 				0497259E2EFC2D2400EF96E1 /* VersionViewModel.swift in Sources */,
 				049725CC2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift in Sources */,
+				049725DD2EFF533200EF96E1 /* Strings.swift in Sources */,
 				049725D72EFEF50B00EF96E1 /* PhotoDetailView.swift in Sources */,
 				049725892EFB87A600EF96E1 /* AuthRepository.swift in Sources */,
 				049725942EFB89D500EF96E1 /* HomeView.swift in Sources */,
@@ -863,6 +911,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -893,6 +942,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

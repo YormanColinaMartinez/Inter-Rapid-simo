@@ -9,32 +9,27 @@ import Foundation
 
 @MainActor
 final class LoginViewModel: ObservableObject {
-
+    
     @Published var isLoading = false
     @Published var errorMessage: String?
-    @Published var isLoggedIn = false
-    @Published var loggedUser: User?
-
+    
     private let authRepo: AuthRepository
     private let userRepo: UserRepository
-
+    
     init(authRepo: AuthRepository, userRepo: UserRepository) {
         self.authRepo = authRepo
         self.userRepo = userRepo
     }
-
-    func login() {
-        Task {
-            isLoading = true
-            errorMessage = nil
-            do {
-                let user = try await authRepo.login()
-                try await userRepo.save(user: user)
-                isLoggedIn = true
-            } catch {
-                errorMessage = error.localizedDescription
-            }
-            isLoading = false
+    
+    func login() async {
+        isLoading = true
+        errorMessage = nil
+        do {
+            let user = try await authRepo.login()
+            try await userRepo.save(user: user)
+        } catch {
+            errorMessage = error.localizedDescription
         }
+        isLoading = false
     }
 }
