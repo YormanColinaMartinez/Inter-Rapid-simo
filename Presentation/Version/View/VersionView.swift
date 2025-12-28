@@ -1,23 +1,29 @@
 //
 //  VersionView.swift
-//  Inter Rapidísimo
+//  Inter Rapidísimo
 //
 //  Created by mac on 24/12/25.
 //
 
 import SwiftUI
 
+// MARK: - VersionView
+
 struct VersionView: View {
+    
+    // MARK: - Properties
     
     @StateObject var viewModel: VersionViewModel
     @State private var showAlert = false
     let onValidated: () -> Void
     
+    // MARK: - Body
+    
     var body: some View {
         VStack {
             if viewModel.isLoading {
-                ProgressView("Validando versión...")
-            } 
+                ProgressView(Strings.Version.validating)
+            }
         }
         .onAppear {
             viewModel.check()
@@ -33,10 +39,10 @@ struct VersionView: View {
             }
         }
         .alert(
-            "Control de versión",
+            Strings.Version.title,
             isPresented: $showAlert,
             actions: {
-                Button("Aceptar", role: .cancel) {}
+                Button(Strings.Common.accept, role: .cancel) {}
             },
             message: {
                 Text(viewModel.errorMessage ?? "")

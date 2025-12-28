@@ -1,24 +1,34 @@
 //
 //  VersionViewModel.swift
-//  Inter Rapidísimo
+//  Inter Rapidísimo
 //
 //  Created by mac on 24/12/25.
 //
 
 import Foundation
 
+// MARK: - VersionViewModel
+
 @MainActor
 final class VersionViewModel: ObservableObject {
+    
+    // MARK: - Published Properties
     
     @Published var isLoading = true
     @Published var errorMessage: String?
     @Published var isVersionValid = false
     
+    // MARK: - Private Properties
+    
     private let repo: VersionRepository
+    
+    // MARK: - Initialization
     
     init(repo: VersionRepository) {
         self.repo = repo
     }
+    
+    // MARK: - Public Methods
     
     func check() {
         Task {
@@ -30,14 +40,11 @@ final class VersionViewModel: ObservableObject {
                     .infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
 
                 switch localVersion.compareVersion(to: remoteVersion) {
-
                 case .lower:
-                    errorMessage = "Hay una nueva versión disponible (\(remoteVersion)). Por favor actualiza la app."
-                    // Aca se supone que no debe entrar a ningun lado pero quiero que en la prueba en todos los casos entre en el iniciar sesion
+                    errorMessage = String(format: Strings.Version.newVersionAvailable, remoteVersion)
                     isVersionValid = true
                 case .higher:
-                    // Aca se supone que no debe entrar a ningun lado pero quiero que en la prueba en todos los casos entre en el iniciar sesion
-                    errorMessage = "La versión instalada (\(localVersion)) es superior a la del servidor (\(remoteVersion)). Ambiente inconsistente."
+                    errorMessage = String(format: Strings.Version.inconsistentVersion, localVersion, remoteVersion)
                     isVersionValid = true
                 case .equal:
                     isVersionValid = true
@@ -52,6 +59,7 @@ final class VersionViewModel: ObservableObject {
     }
 }
 
+// MARK: - String Extension
 
 extension String {
     

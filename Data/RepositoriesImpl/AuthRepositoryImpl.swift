@@ -1,23 +1,31 @@
 //
 //  AuthRepositoryImpl.swift
-//  Inter Rapidísimo
+//  Inter Rapidísimo
 //
 //  Created by mac on 23/12/25.
 //
 
 import Foundation
 
+// MARK: - AuthRepositoryImpl
+
 final class AuthRepositoryImpl: AuthRepository {
 
+    // MARK: - Properties
+    
     private let api: APIClientProtocol
 
+    // MARK: - Initialization
+    
     init(api: APIClientProtocol) {
         self.api = api
     }
 
+    // MARK: - AuthRepository Implementation
+    
     func login(username: String, password: String) async throws -> User {
         guard !username.isEmpty, !password.isEmpty else {
-            throw NSError(domain: "AuthError", code: 400, userInfo: [NSLocalizedDescriptionKey: "Usuario y contraseña son requeridos"])
+            throw NSError(domain: "AuthError", code: 400, userInfo: [NSLocalizedDescriptionKey: Strings.Login.requiredFieldsError])
         }
         
         let url = URL(string:
@@ -27,7 +35,7 @@ final class AuthRepositoryImpl: AuthRepository {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
-        // Usar los valores del formulario en los headers
+        // MARK: - Headers
         request.addValue(username, forHTTPHeaderField: "Usuario")
         request.addValue(password, forHTTPHeaderField: "Identificacion")
         request.addValue("text/json", forHTTPHeaderField: "Accept")
@@ -37,7 +45,7 @@ final class AuthRepositoryImpl: AuthRepository {
         request.addValue("9", forHTTPHeaderField: "IdAplicativoOrigen")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        // Codificar password en base64 para el body
+        // MARK: - Body
         let passwordBase64 = password.data(using: .utf8)?.base64EncodedString() ?? ""
         let usernameBase64 = username.data(using: .utf8)?.base64EncodedString() ?? ""
         

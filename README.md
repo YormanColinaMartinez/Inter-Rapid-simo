@@ -1,187 +1,202 @@
-# 📱 Inter Rapidísimo – Prueba Técnica iOS (SwiftUI)
+# 📱 Inter Rapidísimo – Prueba Técnica iOS
 
-Este repositorio contiene la solución a la prueba técnica iOS solicitada por **Inter Rapidísimo**, desarrollada utilizando **SwiftUI**, **async/await** y **SQLite3** como sistema de persistencia local.
-
-El foco del desarrollo estuvo en construir una aplicación **estable**, **clara en su flujo**, y **fácil de evaluar**, priorizando la correcta gestión del estado, la robustez ante errores y el cumplimiento estricto de los requisitos funcionales.
+Solución desarrollada en **SwiftUI** con **async/await** y **SQLite3** para persistencia local.
 
 ---
 
 ## 🚀 Cómo correr el proyecto
 
 ### Requisitos
-- Xcode 15 o superior  
-- iOS 16 o superior  
+- Xcode 15+
+- iOS 16+
 - Dispositivo físico recomendado para pruebas de cámara
 
 ### Pasos
-1. Clonar el repositorio.
-2. Abrir el archivo `.xcodeproj` en Xcode.
-3. Seleccionar un simulador o dispositivo.
-4. Ejecutar el proyecto (`Run`).
+1. Clonar el repositorio
+2. Abrir `.xcodeproj` en Xcode
+3. Seleccionar simulador o dispositivo
+4. Ejecutar (`⌘R`)
 
-> ⚠️ Para el módulo de fotos con cámara, se recomienda usar un **dispositivo físico**.  
-> En simulador se habilita selección desde galería.
-
----
-
-## 🧱 Arquitectura y decisiones técnicas
-
-Se utilizó una arquitectura **MVVM ligera**, con separación clara de responsabilidades:
-
-- **Views (SwiftUI)**: renderizan la UI en función del estado.
-- **ViewModels (@MainActor)**: manejan la lógica de presentación.
-- **Repositories**: encapsulan el acceso a red y base de datos.
-- **SQLiteManager**: capa centralizada de persistencia local.
-- **RootView**: punto único de decisión del flujo de navegación.
-
-### Decisión clave
-> Toda la navegación global se controla exclusivamente desde `RootView`.
-
-Esta decisión evita estados duplicados, navegación imperativa y problemas de reconciliación comunes en SwiftUI cuando múltiples vistas intentan manejar el flujo.
+> ⚠️ Para el módulo de fotos, usar **dispositivo físico**. En simulador se habilita selección desde galería.
 
 ---
 
-## 🔄 Control de versión (Requisito 1.1)
+## 🧱 Arquitectura
 
-- Consulta del endpoint remoto de versión.
-- Obtención de versión local desde `CFBundleShortVersionString`.
-- Comparación normalizada (numérica).
+**MVVM** con separación por capas:
 
-### Comportamiento
-- **Versión local menor**: se muestra alerta de actualización y se permite continuar.
-- **Versión igual**: se continúa normalmente.
-- **Versión local mayor**: se alerta de ambiente inconsistente y se permite continuar.
+- **Presentation**: Views (SwiftUI) + ViewModels (@MainActor)
+- **Domain**: Models + Repositories (protocolos)
+- **Data**: DTOs + Implementaciones de repositorios + SQLiteManager
 
-### Supuesto técnico
-El endpoint retorna un **valor plano (ej. `"100"`) y no un JSON**, por lo que se implementó un cliente de red específico para manejar este tipo de respuesta.
+### Decisiones clave
 
----
+**1. async/await sobre Combine**
+- Sintaxis más clara y legible para operaciones asíncronas
+- Mejor integración con SwiftUI y APIs modernas de iOS
+- Menor complejidad para el alcance de la prueba
+- Manejo de errores más directo con `try/catch`
 
-## 🔐 Autenticación (Requisito 1.2)
+**2. SQLite3 nativo sobre Core Data**
+- Control explícito del esquema y queries
+- Manejo directo de BLOBs (imágenes)
+- Menor overhead y mayor visibilidad de la lógica
+- Sin dependencias adicionales
 
-- Login vía `POST` usando headers y body provistos.
-- Manejo de loading y error.
-- Persistencia local del usuario autenticado.
-- Restauración automática de sesión al relanzar la app.
-
-El estado de autenticación se maneja mediante un `SessionViewModel` centralizado, observado por `RootView`.
-
----
-
-## 🏠 Home y navegación
-
-- Pantalla principal posterior al login.
-- Visualización de información básica del usuario.
-- Acceso a los módulos:
-  - Tablas locales
-  - Localidades
-  - Fotos
-- Logout:
-  - Elimina el usuario persistido.
-  - Actualiza el estado de sesión.
-  - Retorna automáticamente a Login.
-
-No se utiliza navegación imperativa (`NavigationLink(isActive:)`) para el flujo principal.
+**3. Navegación centralizada en RootView**
+- Evita estados duplicados y navegación imperativa
+- Flujo de autenticación más predecible
+- Facilita testing y mantenimiento
 
 ---
 
-## 📍 Localidades
+## ✅ Requisitos implementados
 
-El servicio remoto para localidades responde con **401 / 404 (no autorizado)**.
+### 1. Capa de Seguridad
 
-### Decisión tomada
-Para no bloquear el flujo de la aplicación:
-- El error se maneja de forma controlada.
-- Se implementa un **fallback local**.
-- Las localidades se persisten y se muestran desde SQLite.
+**1.1 Control de versiones**
+- GET endpoint de versión remota
+- Comparación con `CFBundleShortVersionString`
+- Alertas para versión menor/mayor/igual
+- Manejo de errores de red
 
-Este comportamiento está documentado y es consistente con escenarios reales de indisponibilidad de servicios.
+**1.2 Login**
+- POST con headers y body dinámicos desde formulario
+- Validación de campos requeridos
+- Persistencia de usuario autenticado
+- Restauración automática de sesión
+
+### 2. Capa de Datos (SQLite)
+
+**Persistencia local:**
+- Usuario autenticado (usuario, identificación, nombre)
+- Tablas del sincronizador (schema_tables)
+- Fotos (BLOB + metadatos: seq, name, date)
+- Localidades (fallback local)
+
+**2.1 Sincronizador de tablas**
+- GET endpoint de esquema
+- Persistencia en tabla local `schema_tables`
+- Sincronización automática al cargar
+
+### 3. Capa de Presentación (SwiftUI)
+
+**3.1 HOME**
+- Muestra usuario, identificación y nombre desde SQLite
+- Navegación a Tablas, Localidades y Fotos
+- Logout funcional
+
+**3.2 TABLAS**
+- Lista de tablas desde SQLite
+- Estados: loading/empty/error
+- Sincronización automática
+
+**3.3 LOCALIDADES**
+- GET endpoint de localidades
+- Muestra AbreviacionCiudad y NombreCompleto
+- Fallback local si el servicio falla
+
+**3.4 FOTOS**
+- Lista vertical con miniatura y nombre
+- Barra inferior fija con botones descriptivos
+- Captura con cámara (permisos manejados)
+- Visualización en pantalla completa con zoom
+- Generación automática de nombres (photo-001, photo-002...)
+- Persistencia: id/seq, nombre, fecha, BLOB
 
 ---
 
-## 📸 Fotos (Requisito 3.4)
+## 🔧 Detalles técnicos
 
-### Funcionalidad
-- Lista vertical con:
-  - Miniatura a la izquierda.
-  - Nombre y fecha a la derecha.
-- Barra inferior fija con:
-  - Botón de cámara (captura).
-  - Botón de visualización en pantalla completa.
-- Captura de imágenes mediante `UIImagePickerController` (UIKit bridge).
-- Persistencia de:
-  - id / secuencia
-  - nombre
-  - fecha
-  - imagen (BLOB)
+### Networking
+- `APIClient` con async/await
+- Timeouts configurados (30s request, 60s resource)
+- Manejo de códigos HTTP y errores de parsing
+- Cliente específico para respuestas planas (versión)
 
-### Generación de nombre
-- Formato: `photo-001`, `photo-002`, …
-- Basado en el **mayor consecutivo almacenado**, evitando colisiones.
+### Base de datos
+- Thread-safe con cola serial
+- Transacciones explícitas
+- Escape de caracteres especiales (SQL injection prevention)
+- Tests unitarios para operaciones principales
 
 ### Permisos
-- Declaración de `NSCameraUsageDescription` en `Info.plist`.
-- Manejo del flujo si la cámara no está disponible o el permiso es denegado.
+- `NSCameraUsageDescription` en Info.plist
+- `NSPhotoLibraryUsageDescription` para galería
+- Manejo de estados: authorized/denied/restricted/notDetermined
+- Alertas y navegación a Configuración
+
+### Estados UI
+- Loading: ProgressView con mensajes descriptivos
+- Empty: Vistas vacías con iconos y mensajes
+- Error: Mensajes de error claros y accionables
 
 ---
 
-## 💾 Base de datos (SQLite)
+## 📦 Dependencias
 
-Se decidió utilizar **SQLite3 directamente** en lugar de Core Data por:
+**Ninguna librería externa.**
 
-- Control explícito del esquema.
-- Manejo claro de BLOBs (imágenes).
-- Menor complejidad para el alcance de la prueba.
-- Mayor visibilidad de la lógica de persistencia.
-
-Características:
-- Inicialización segura.
-- Acceso thread-safe mediante cola serial.
-- Uso de transacciones explícitas.
-- Manejo controlado de errores.
-
----
-
-## 📦 Librerías utilizadas
-
-No se utilizaron librerías externas.
-
-El proyecto utiliza únicamente:
+Utiliza únicamente:
 - SwiftUI
 - Foundation
-- SQLite3
-- UIKit (limitado al uso de `ImagePicker`)
+- SQLite3 (nativo)
+- UIKit (solo ImagePicker bridge)
 
-Esta decisión se tomó para mantener el proyecto simple y fácil de evaluar.
+**Justificación**: Mantener el proyecto simple, evaluable y sin dependencias externas que puedan complicar la revisión.
 
 ---
 
-## 🧪 Pasos de prueba sugeridos
+## 🧪 Testing
 
-1. Ejecutar la aplicación.
-2. Validar la pantalla de control de versión.
-3. Iniciar sesión con las credenciales provistas.
-4. Verificar acceso al Home.
-5. Cerrar la app y volver a abrir para validar persistencia.
-6. Probar el módulo de Localidades.
-7. Probar el módulo de Fotos:
-   - Capturar una imagen.
-   - Ver la lista de fotos.
-   - Visualizar una foto en pantalla completa.
-8. Ejecutar Logout y validar retorno a Login.
+**Tests unitarios incluidos:**
+- SQLiteManager (CRUD de usuarios, fotos, localidades)
+- ViewModels (Login, Version, Home, etc.)
+- DTOs (parsing de respuestas)
+- Comparación de versiones
+
+**Cobertura:**
+- Operaciones críticas de base de datos
+- Lógica de negocio en ViewModels
+- Validaciones y manejo de errores
 
 ---
 
 ## 🧠 Supuestos y trade-offs
 
-- Los servicios remotos pueden no estar disponibles → se manejan fallbacks.
-- Se priorizó estabilidad y claridad sobre diseño visual avanzado.
-- Se evitó sobre-arquitectura innecesaria para el alcance de la prueba.
+1. **Servicios remotos pueden fallar** → Fallbacks locales implementados
+2. **Versión del endpoint retorna texto plano** → Cliente específico para manejar esto
+3. **Localidades pueden retornar 401/404** → Persistencia local como fallback
+4. **Prioridad: estabilidad > diseño visual** → UI funcional y clara, no sofisticada
+5. **Sin sobre-arquitectura** → MVVM simple y directo para el alcance de la prueba
 
 ---
 
-## ✅ Conclusión
+## 📝 Estructura del proyecto
 
-La solución presentada cumple con los requisitos funcionales y técnicos solicitados, demostrando un manejo adecuado de SwiftUI, persistencia local, control de estado y una arquitectura clara y mantenible.
+```
+Inter Rapidísimo/
+├── App/                    # Entry point
+├── Core/                   # Utilidades compartidas
+│   ├── Database/          # SQLiteManager
+│   ├── Network/           # APIClient
+│   └── Utils/             # Helpers
+├── Data/                   # Capa de datos
+│   ├── DTOs/              # Data Transfer Objects
+│   └── RepositoriesImpl/  # Implementaciones
+├── Domain/                 # Capa de dominio
+│   ├── Models/            # Entidades
+│   └── Repositories/      # Protocolos
+└── Presentation/          # Capa de presentación
+    ├── Home/
+    ├── Login/
+    ├── Version/
+    ├── Tables/
+    ├── Localidades/
+    └── Photos/
+```
 
-El proyecto está preparado para ser evaluado y defendido técnicamente.
+---
+
+
+El proyecto está listo para evaluación técnica.

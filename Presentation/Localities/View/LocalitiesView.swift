@@ -1,26 +1,34 @@
 //
 //  LocalitiesView.swift
-//  Inter Rapidísimo
+//  Inter Rapidísimo
 //
 //  Created by mac on 25/12/25.
 //
 
 import SwiftUI
 
+// MARK: - LocalitiesView
+
 struct LocalitiesView: View {
 
+    // MARK: - Properties
+    
     @StateObject private var viewModel: LocalitiesViewModel
 
+    // MARK: - Initialization
+    
     init() {
         let api = APIClient()
         let repo = LocalitiesRepositoryImpl(api: api)
         _viewModel = StateObject(wrappedValue: LocalitiesViewModel(repo: repo))
     }
 
+    // MARK: - Body
+    
     var body: some View {
         Group {
             if viewModel.isLoading {
-                ProgressView("Cargando localidades...")
+                ProgressView(Strings.Localities.loading)
             } else if let error = viewModel.error {
                 VStack(spacing: 12) {
                     Image(systemName: "exclamationmark.triangle")
@@ -36,7 +44,7 @@ struct LocalitiesView: View {
                     Image(systemName: "mappin.slash")
                         .font(.largeTitle)
                         .foregroundColor(.gray)
-                    Text("No hay localidades disponibles")
+                    Text(Strings.Localities.empty)
                         .foregroundColor(.gray)
                 }
                 .padding()
@@ -52,7 +60,7 @@ struct LocalitiesView: View {
                 }
             }
         }
-        .navigationTitle("Localidades")
+        .navigationTitle(Strings.Localities.title)
         .onAppear {
             viewModel.load()
         }

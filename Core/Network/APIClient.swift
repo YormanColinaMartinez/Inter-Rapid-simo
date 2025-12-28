@@ -1,15 +1,21 @@
 //
 //  APIClient.swift
-//  Inter Rapidísimo
+//  Inter Rapidísimo
 //
 //  Created by mac on 23/12/25.
 //
 
 import Foundation
 
+// MARK: - APIClient
+
 final class APIClient: APIClientProtocol {
     
+    // MARK: - Properties
+    
     private let session: URLSession
+    
+    // MARK: - Initialization
     
     init() {
         let configuration = URLSessionConfiguration.default
@@ -17,6 +23,8 @@ final class APIClient: APIClientProtocol {
         configuration.timeoutIntervalForResource = 60.0
         self.session = URLSession(configuration: configuration)
     }
+    
+    // MARK: - APIClientProtocol Implementation
     
     func request<T: Decodable>(_ request: URLRequest) async throws -> T {
         let (data, response) = try await session.data(for: request)
@@ -48,10 +56,9 @@ final class APIClient: APIClientProtocol {
         }
 
         guard let value = String(data: data, encoding: .utf8) else {
-            throw APIError.decoding(NSError(domain: "Empty plain response", code: 0))
+            throw APIError.decoding(NSError(domain: Strings.Errors.emptyPlainResponse, code: 0))
         }
 
         return value
     }
-
 }

@@ -1,6 +1,6 @@
 //
 //  SQLiteManager.swift
-//  Inter Rapidísimo
+//  Inter Rapidísimo
 //
 //  Created by mac on 23/12/25.
 //
@@ -8,17 +8,24 @@
 import Foundation
 import SQLite3
 
+// MARK: - Constants
+
 let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+
+// MARK: - SQLiteManager
 
 final class SQLiteManager {
     
     // MARK: - Properties
+    
     static let shared = SQLiteManager()
 
     private let dbName = "inter_rapidisimo.sqlite"
     private var db: OpaquePointer?
     private let queue = DispatchQueue(label: "com.interrapidisimo.sqlite.queue")
 
+    // MARK: - Initialization
+    
     private init() {
         do {
             try openDatabase()
@@ -33,13 +40,13 @@ final class SQLiteManager {
         closeDatabaseSilently()
     }
 
-    // MARK: - Helpers
+    // MARK: - Private Helpers
 
     private var errorMessage: String {
         if let db, let error = sqlite3_errmsg(db) {
             return String(cString: error)
         }
-        return "Unknown SQLite error"
+        return Strings.Errors.unknownSQLiteError
     }
 
     private func databasePath() throws -> String {
@@ -52,7 +59,7 @@ final class SQLiteManager {
 
     private func ensureDB() throws {
         guard db != nil else {
-            throw SQLiteError.openDatabase(message: "Database not initialized")
+            throw SQLiteError.openDatabase(message: Strings.Errors.databaseNotInitialized)
         }
     }
 
@@ -118,6 +125,8 @@ final class SQLiteManager {
         }
     }
     
+    // MARK: - Private Core Methods
+    
     private func performInsertWithBlob(
         sql: String,
         textBindings: [String],
@@ -144,7 +153,6 @@ final class SQLiteManager {
             }
         }
     }
-
 
     // MARK: - Public API (async)
 
@@ -194,7 +202,7 @@ final class SQLiteManager {
         }
     }
 
-    // MARK: - Core
+    // MARK: - Core Database Operations
 
     private func performExecute(sql: String) throws {
         try ensureDB()
@@ -236,6 +244,8 @@ final class SQLiteManager {
         return results
     }
     
+    // MARK: - User Operations
+    
     func saveUser(_ user: User) async throws {
         let sql = """
         INSERT OR REPLACE INTO user (usuario, identificacion, nombre)
@@ -256,6 +266,13 @@ final class SQLiteManager {
         
         return users.first
     }
+    
+    func deleteUser() async throws {
+        let sql = "DELETE FROM user;"
+        try await execute(sql)
+    }
+    
+    // MARK: - Locality Operations
     
     func saveLocalities(_ items: [Locality]) async throws {
         try await execute("DELETE FROM locality;")
@@ -279,6 +296,8 @@ final class SQLiteManager {
             return Locality(id: id, abreviacionCiudad: abreviacion, nombreCompleto: nombreCompleto)
         }
     }
+    
+    // MARK: - Photo Operations
     
     func savePhoto(_ photo: Photo, seq: Int) async throws {
         let dateString = ISO8601DateFormatter().string(from: photo.date)
@@ -324,10 +343,5 @@ final class SQLiteManager {
         }
 
         return result.first ?? 1
-    }
-    
-    func deleteUser() async throws {
-        let sql = "DELETE FROM user;"
-        try await execute(sql)
     }
 }
