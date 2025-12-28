@@ -24,5 +24,3 @@ final class MockVersionRepository: VersionRepository {
         return AppVersionDTO(version: version)
     }
 }
-
-

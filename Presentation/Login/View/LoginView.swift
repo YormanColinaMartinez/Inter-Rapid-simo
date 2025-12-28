@@ -191,18 +191,10 @@ struct LoginView: View {
                         endPoint: .trailing
                     )
                 )
+                .frame(width: 150)
                 .cornerRadius(12)
             }
             .disabled(viewModel.isLoading || username.isEmpty || password.isEmpty)
-            
-            // Forgot Password Link
-            Button {
-                // TODO: Implement forgot password
-            } label: {
-                Text(Strings.Login.forgotPassword)
-                    .font(.system(size: 14))
-                    .foregroundColor(.white)
-            }
         }
         .padding(24)
         .background(
