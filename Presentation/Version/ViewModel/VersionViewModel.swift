@@ -42,10 +42,8 @@ final class VersionViewModel: ObservableObject {
                 switch localVersion.compareVersion(to: remoteVersion) {
                 case .lower:
                     errorMessage = String(format: Strings.Version.newVersionAvailable, remoteVersion)
-                    isVersionValid = true
                 case .higher:
                     errorMessage = String(format: Strings.Version.inconsistentVersion, localVersion, remoteVersion)
-                    isVersionValid = true
                 case .equal:
                     isVersionValid = true
                 }
