@@ -13,7 +13,6 @@ final class VersionViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var errorMessage: String?
     @Published var isVersionValid = false
-    @Published var route: VersionRoute = .none
     
     private let repo: VersionRepository
     
@@ -41,11 +40,6 @@ final class VersionViewModel: ObservableObject {
                     errorMessage = "La versión instalada (\(localVersion)) es superior a la del servidor (\(remoteVersion)). Ambiente inconsistente."
                     isVersionValid = true
                 case .equal:
-                    if let _ = try await SQLiteManager.shared.fetchUser() {
-                        route = .home
-                    } else {
-                        route = .login
-                    }
                     isVersionValid = true
                 }
                 
