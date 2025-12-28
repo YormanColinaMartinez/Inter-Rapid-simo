@@ -18,7 +18,7 @@ final class LocalitiesRepositoryImpl: LocalitiesRepository {
 
     func fetchRemote() async throws -> [Locality] {
         let url = URL(string:
-            "https://apitesting.interrapidisimo.co/FtEntregaElectronica/MultiCanales/ApiSeguridadPruebas/api/Seguridad/ObtenerLocalidadesRecogidas"
+            "https://apitesting.interrapidisimo.co/apicontrollerpruebas/api/ParametrosFramework/ObtenerLocalidadesRecogidas"
         )!
 
         var request = URLRequest(url: url)
@@ -26,8 +26,12 @@ final class LocalitiesRepositoryImpl: LocalitiesRepository {
         
         let dtos: [LocalityDTO] = try await api.request(request)
         
-        let locals = dtos.map {
-            Locality(id: $0.id, name: $0.name)
+        let locals = dtos.enumerated().map { index, dto in
+            Locality(
+                id: index + 1,
+                abreviacionCiudad: dto.abreviacionCiudad,
+                nombreCompleto: dto.nombreCompleto
+            )
         }
         
         try await db.saveLocalities(locals)

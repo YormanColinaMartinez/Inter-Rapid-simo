@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Locality {
+struct Locality: Identifiable {
     let id: Int
-    let name: String
+    let abreviacionCiudad: String
+    let nombreCompleto: String
+    
+    var name: String {
+        return nombreCompleto
+    }
 }

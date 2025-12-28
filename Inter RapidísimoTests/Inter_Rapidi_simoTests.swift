@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Inter_Rapidi_simo
+@testable import Inter_Rapidísimo
 
 final class Inter_Rapidi_simoTests: XCTestCase {
 

@@ -17,7 +17,7 @@ final class SchemaRepositoryImpl: SchemaRepository {
 
     func fetchSchema() async throws -> [SchemaTableDTO] {
         let url = URL(string:
-            "https://apitesting.interrapidisimo.co/FtEntregaElectronica/MultiCanales/ApiSincronizadorDatosPruebas/api/SincronizadorDatos/ObtenerEsquema/true"
+            "https://apitesting.interrapidisimo.co/apicontrollerpruebas/api/SincronizadorDatos/ObtenerEsquema/true"
         )!
 
         var request = URLRequest(url: url)

@@ -22,10 +22,33 @@ struct LocalitiesView: View {
             if viewModel.isLoading {
                 ProgressView("Cargando localidades...")
             } else if let error = viewModel.error {
-                Text(error).foregroundColor(.red)
+                VStack(spacing: 12) {
+                    Image(systemName: "exclamationmark.triangle")
+                        .font(.largeTitle)
+                        .foregroundColor(.red)
+                    Text(error)
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+            } else if viewModel.items.isEmpty {
+                VStack(spacing: 12) {
+                    Image(systemName: "mappin.slash")
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
+                    Text("No hay localidades disponibles")
+                        .foregroundColor(.gray)
+                }
+                .padding()
             } else {
                 List(viewModel.items, id: \.id) { loc in
-                    Text(loc.name)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(loc.nombreCompleto)
+                            .font(.headline)
+                        Text(loc.abreviacionCiudad)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
         }

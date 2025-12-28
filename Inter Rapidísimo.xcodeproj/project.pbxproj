@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0497253B2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497253A2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift */; };
-		0497253D2EFB408D00EF96E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497253C2EFB408D00EF96E1 /* ContentView.swift */; };
 		0497253F2EFB409000EF96E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0497253E2EFB409000EF96E1 /* Assets.xcassets */; };
 		049725422EFB409000EF96E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049725412EFB409000EF96E1 /* Preview Assets.xcassets */; };
 		0497254C2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497254B2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift */; };
@@ -48,7 +47,6 @@
 		049725BF2EFE3C2D00EF96E1 /* LocalitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725BE2EFE3C2D00EF96E1 /* LocalitiesView.swift */; };
 		049725C22EFE472700EF96E1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C12EFE472600EF96E1 /* Photo.swift */; };
 		049725C52EFE55CE00EF96E1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C42EFE55CE00EF96E1 /* ImagePicker.swift */; };
-		049725C82EFE562300EF96E1 /* CameraTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C72EFE562300EF96E1 /* CameraTestView.swift */; };
 		049725CA2EFED3B800EF96E1 /* PhotosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725C92EFED3B700EF96E1 /* PhotosRepository.swift */; };
 		049725CC2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725CB2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift */; };
 		049725CF2EFED45400EF96E1 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725CE2EFED45400EF96E1 /* PhotosViewModel.swift */; };
@@ -60,6 +58,31 @@
 		049725DF2EFF697100EF96E1 /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725DE2EFF697100EF96E1 /* HomeCard.swift */; };
 		049725E12EFF852F00EF96E1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725E02EFF852F00EF96E1 /* RootView.swift */; };
 		049725E62EFF857700EF96E1 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725E52EFF857700EF96E1 /* SessionViewModel.swift */; };
+		049725EA2F00D9AF00EF96E1 /* VersionComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725E92F00D9AF00EF96E1 /* VersionComparison.swift */; };
+		049725F12F00F00000EF96E1 /* CameraPermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725F02F00F00000EF96E1 /* CameraPermissionManager.swift */; };
+		049725FE2F018C4900EF96E1 /* HomeModuleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725FD2F018C4900EF96E1 /* HomeModuleCard.swift */; };
+		049725FF2F018C4900EF96E1 /* HomeModuleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049725FD2F018C4900EF96E1 /* HomeModuleCard.swift */; };
+		049726232F01988900EF96E1 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726012F01988800EF96E1 /* MockUserRepository.swift */; };
+		049726242F01988900EF96E1 /* MockAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726022F01988800EF96E1 /* MockAuthRepository.swift */; };
+		049726252F01988900EF96E1 /* MockPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726032F01988800EF96E1 /* MockPhotoRepository.swift */; };
+		049726262F01988900EF96E1 /* MockLocalitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726042F01988800EF96E1 /* MockLocalitiesRepository.swift */; };
+		049726272F01988900EF96E1 /* MockSchemaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726052F01988800EF96E1 /* MockSchemaRepository.swift */; };
+		049726282F01988900EF96E1 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726082F01988800EF96E1 /* HomeViewModelTests.swift */; };
+		049726292F01988900EF96E1 /* TablesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497260A2F01988800EF96E1 /* TablesViewModelTests.swift */; };
+		0497262A2F01988900EF96E1 /* VersionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497260C2F01988800EF96E1 /* VersionViewModelTests.swift */; };
+		0497262B2F01988900EF96E1 /* MockVersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497260D2F01988800EF96E1 /* MockVersionRepository.swift */; };
+		0497262C2F01988900EF96E1 /* VersionComparisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497260E2F01988800EF96E1 /* VersionComparisonTests.swift */; };
+		0497262D2F01988900EF96E1 /* LocalitiesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726102F01988800EF96E1 /* LocalitiesViewModelTests.swift */; };
+		0497262E2F01988900EF96E1 /* PhotosViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726122F01988800EF96E1 /* PhotosViewModelTests.swift */; };
+		0497262F2F01988900EF96E1 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726142F01988800EF96E1 /* LoginViewModelTests.swift */; };
+		049726302F01988900EF96E1 /* CameraPermissionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726172F01988800EF96E1 /* CameraPermissionManagerTests.swift */; };
+		049726312F01988900EF96E1 /* LocalityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497261A2F01988900EF96E1 /* LocalityTests.swift */; };
+		049726322F01988900EF96E1 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497261B2F01988900EF96E1 /* UserTests.swift */; };
+		049726332F01988900EF96E1 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497261C2F01988900EF96E1 /* PhotoTests.swift */; };
+		049726342F01988900EF96E1 /* SchemaTableDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497261F2F01988900EF96E1 /* SchemaTableDTOTests.swift */; };
+		049726352F01988900EF96E1 /* LoginResponseDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726202F01988900EF96E1 /* LoginResponseDTOTests.swift */; };
+		049726362F01988900EF96E1 /* LocalityDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726212F01988900EF96E1 /* LocalityDTOTests.swift */; };
+		049726372F01988900EF96E1 /* AppVersionDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049726222F01988900EF96E1 /* AppVersionDTOTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +105,6 @@
 /* Begin PBXFileReference section */
 		049725372EFB408D00EF96E1 /* Inter Rapidísimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inter Rapidísimo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0497253A2EFB408D00EF96E1 /* Inter_Rapidi_simoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inter_Rapidi_simoApp.swift; sourceTree = "<group>"; };
-		0497253C2EFB408D00EF96E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0497253E2EFB409000EF96E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049725412EFB409000EF96E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		049725472EFB409000EF96E1 /* Inter RapidísimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Inter RapidísimoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +146,6 @@
 		049725BE2EFE3C2D00EF96E1 /* LocalitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitiesView.swift; sourceTree = "<group>"; };
 		049725C12EFE472600EF96E1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		049725C42EFE55CE00EF96E1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		049725C72EFE562300EF96E1 /* CameraTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTestView.swift; sourceTree = "<group>"; };
 		049725C92EFED3B700EF96E1 /* PhotosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepository.swift; sourceTree = "<group>"; };
 		049725CB2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepositoryImpl.swift; sourceTree = "<group>"; };
 		049725CE2EFED45400EF96E1 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +157,30 @@
 		049725DE2EFF697100EF96E1 /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 		049725E02EFF852F00EF96E1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		049725E52EFF857700EF96E1 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		049725E92F00D9AF00EF96E1 /* VersionComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComparison.swift; sourceTree = "<group>"; };
+		049725F02F00F00000EF96E1 /* CameraPermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionManager.swift; sourceTree = "<group>"; };
+		049725FD2F018C4900EF96E1 /* HomeModuleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleCard.swift; sourceTree = "<group>"; };
+		049726012F01988800EF96E1 /* MockUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
+		049726022F01988800EF96E1 /* MockAuthRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAuthRepository.swift; sourceTree = "<group>"; };
+		049726032F01988800EF96E1 /* MockPhotoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPhotoRepository.swift; sourceTree = "<group>"; };
+		049726042F01988800EF96E1 /* MockLocalitiesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocalitiesRepository.swift; sourceTree = "<group>"; };
+		049726052F01988800EF96E1 /* MockSchemaRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSchemaRepository.swift; sourceTree = "<group>"; };
+		049726082F01988800EF96E1 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		0497260A2F01988800EF96E1 /* TablesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesViewModelTests.swift; sourceTree = "<group>"; };
+		0497260C2F01988800EF96E1 /* VersionViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionViewModelTests.swift; sourceTree = "<group>"; };
+		0497260D2F01988800EF96E1 /* MockVersionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockVersionRepository.swift; sourceTree = "<group>"; };
+		0497260E2F01988800EF96E1 /* VersionComparisonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionComparisonTests.swift; sourceTree = "<group>"; };
+		049726102F01988800EF96E1 /* LocalitiesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalitiesViewModelTests.swift; sourceTree = "<group>"; };
+		049726122F01988800EF96E1 /* PhotosViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewModelTests.swift; sourceTree = "<group>"; };
+		049726142F01988800EF96E1 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		049726172F01988800EF96E1 /* CameraPermissionManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPermissionManagerTests.swift; sourceTree = "<group>"; };
+		0497261A2F01988900EF96E1 /* LocalityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalityTests.swift; sourceTree = "<group>"; };
+		0497261B2F01988900EF96E1 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		0497261C2F01988900EF96E1 /* PhotoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
+		0497261F2F01988900EF96E1 /* SchemaTableDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaTableDTOTests.swift; sourceTree = "<group>"; };
+		049726202F01988900EF96E1 /* LoginResponseDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponseDTOTests.swift; sourceTree = "<group>"; };
+		049726212F01988900EF96E1 /* LocalityDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalityDTOTests.swift; sourceTree = "<group>"; };
+		049726222F01988900EF96E1 /* AppVersionDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionDTOTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +236,6 @@
 		049725392EFB408D00EF96E1 /* Inter Rapidísimo */ = {
 			isa = PBXGroup;
 			children = (
-				0497253C2EFB408D00EF96E1 /* ContentView.swift */,
 				0497253E2EFB409000EF96E1 /* Assets.xcassets */,
 				049725402EFB409000EF96E1 /* Preview Content */,
 			);
@@ -209,6 +253,11 @@
 		0497254A2EFB409000EF96E1 /* Inter RapidísimoTests */ = {
 			isa = PBXGroup;
 			children = (
+				049726152F01988800EF96E1 /* Core */,
+				0497261D2F01988900EF96E1 /* Data */,
+				049726182F01988900EF96E1 /* Domain */,
+				049726002F01988800EF96E1 /* Mocks */,
+				049726062F01988800EF96E1 /* Presentation */,
 				0497254B2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift */,
 			);
 			path = "Inter RapidísimoTests";
@@ -296,6 +345,7 @@
 		0497256B2EFB437600EF96E1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				049725F02F00F00000EF96E1 /* CameraPermissionManager.swift */,
 				049725DB2EFF52D700EF96E1 /* Strings */,
 			);
 			path = Utils;
@@ -327,6 +377,7 @@
 		0497256E2EFB439B00EF96E1 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				049725E82F00D99F00EF96E1 /* Enums */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -398,7 +449,6 @@
 			children = (
 				049725D12EFEF00900EF96E1 /* View */,
 				049725CD2EFED43900EF96E1 /* ViewModel */,
-				049725C62EFE560C00EF96E1 /* Camera */,
 				049725C32EFE55B400EF96E1 /* ImagePicker */,
 			);
 			path = Photos;
@@ -425,6 +475,7 @@
 			children = (
 				049725932EFB89D500EF96E1 /* HomeView.swift */,
 				049725DE2EFF697100EF96E1 /* HomeCard.swift */,
+				049725FD2F018C4900EF96E1 /* HomeModuleCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,14 +545,6 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
-		049725C62EFE560C00EF96E1 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				049725C72EFE562300EF96E1 /* CameraTestView.swift */,
-			);
-			path = Camera;
-			sourceTree = "<group>";
-		};
 		049725CD2EFED43900EF96E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +602,147 @@
 				049725E52EFF857700EF96E1 /* SessionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		049725E82F00D99F00EF96E1 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				049725E92F00D9AF00EF96E1 /* VersionComparison.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		049726002F01988800EF96E1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				049726012F01988800EF96E1 /* MockUserRepository.swift */,
+				049726022F01988800EF96E1 /* MockAuthRepository.swift */,
+				049726032F01988800EF96E1 /* MockPhotoRepository.swift */,
+				049726042F01988800EF96E1 /* MockLocalitiesRepository.swift */,
+				049726052F01988800EF96E1 /* MockSchemaRepository.swift */,
+			);
+			name = Mocks;
+			path = "Inter RapidísimoTests/Mocks";
+			sourceTree = SOURCE_ROOT;
+		};
+		049726062F01988800EF96E1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				049726072F01988800EF96E1 /* Home */,
+				049726092F01988800EF96E1 /* Tables */,
+				0497260B2F01988800EF96E1 /* Version */,
+				0497260F2F01988800EF96E1 /* Localities */,
+				049726112F01988800EF96E1 /* Photos */,
+				049726132F01988800EF96E1 /* Login */,
+			);
+			name = Presentation;
+			path = "Inter RapidísimoTests/Presentation";
+			sourceTree = SOURCE_ROOT;
+		};
+		049726072F01988800EF96E1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				049726082F01988800EF96E1 /* HomeViewModelTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		049726092F01988800EF96E1 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				0497260A2F01988800EF96E1 /* TablesViewModelTests.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		0497260B2F01988800EF96E1 /* Version */ = {
+			isa = PBXGroup;
+			children = (
+				0497260C2F01988800EF96E1 /* VersionViewModelTests.swift */,
+				0497260D2F01988800EF96E1 /* MockVersionRepository.swift */,
+				0497260E2F01988800EF96E1 /* VersionComparisonTests.swift */,
+			);
+			path = Version;
+			sourceTree = "<group>";
+		};
+		0497260F2F01988800EF96E1 /* Localities */ = {
+			isa = PBXGroup;
+			children = (
+				049726102F01988800EF96E1 /* LocalitiesViewModelTests.swift */,
+			);
+			path = Localities;
+			sourceTree = "<group>";
+		};
+		049726112F01988800EF96E1 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				049726122F01988800EF96E1 /* PhotosViewModelTests.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		049726132F01988800EF96E1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				049726142F01988800EF96E1 /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		049726152F01988800EF96E1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				049726162F01988800EF96E1 /* Utils */,
+			);
+			name = Core;
+			path = "Inter RapidísimoTests/Core";
+			sourceTree = SOURCE_ROOT;
+		};
+		049726162F01988800EF96E1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				049726172F01988800EF96E1 /* CameraPermissionManagerTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		049726182F01988900EF96E1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				049726192F01988900EF96E1 /* Models */,
+			);
+			name = Domain;
+			path = "Inter RapidísimoTests/Domain";
+			sourceTree = SOURCE_ROOT;
+		};
+		049726192F01988900EF96E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0497261A2F01988900EF96E1 /* LocalityTests.swift */,
+				0497261B2F01988900EF96E1 /* UserTests.swift */,
+				0497261C2F01988900EF96E1 /* PhotoTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0497261D2F01988900EF96E1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0497261E2F01988900EF96E1 /* DTOs */,
+			);
+			name = Data;
+			path = "Inter RapidísimoTests/Data";
+			sourceTree = SOURCE_ROOT;
+		};
+		0497261E2F01988900EF96E1 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				0497261F2F01988900EF96E1 /* SchemaTableDTOTests.swift */,
+				049726202F01988900EF96E1 /* LoginResponseDTOTests.swift */,
+				049726212F01988900EF96E1 /* LocalityDTOTests.swift */,
+				049726222F01988900EF96E1 /* AppVersionDTOTests.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -694,7 +878,6 @@
 				049725A72EFE292900EF96E1 /* SchemaRepositoryImpl.swift in Sources */,
 				049725E62EFF857700EF96E1 /* SessionViewModel.swift in Sources */,
 				0497259A2EFC2B7600EF96E1 /* VersionRepositoryImpl.swift in Sources */,
-				0497253D2EFB408D00EF96E1 /* ContentView.swift in Sources */,
 				049725792EFB4AA400EF96E1 /* APIError.swift in Sources */,
 				049725A32EFE28AD00EF96E1 /* SchemaTableDTO.swift in Sources */,
 				049725B12EFE2B6D00EF96E1 /* TablesView.swift in Sources */,
@@ -723,16 +906,18 @@
 				049725B52EFE3B3400EF96E1 /* Locality.swift in Sources */,
 				049725DF2EFF697100EF96E1 /* HomeCard.swift in Sources */,
 				049725BF2EFE3C2D00EF96E1 /* LocalitiesView.swift in Sources */,
-				049725C82EFE562300EF96E1 /* CameraTestView.swift in Sources */,
 				049725B92EFE3BCA00EF96E1 /* LocalitiesRepositoryImpl.swift in Sources */,
 				049725A12EFC2D5400EF96E1 /* VersionView.swift in Sources */,
 				049725A92EFE2A6100EF96E1 /* SchemaLocalRepositoryImpl.swift in Sources */,
 				0497258B2EFB887400EF96E1 /* AuthRepositoryImpl.swift in Sources */,
+				049725EA2F00D9AF00EF96E1 /* VersionComparison.swift in Sources */,
 				049725962EFC2B3600EF96E1 /* AppVersionDTO.swift in Sources */,
 				0497259E2EFC2D2400EF96E1 /* VersionViewModel.swift in Sources */,
 				049725CC2EFED3FA00EF96E1 /* PhotosRepositoryImpl.swift in Sources */,
 				049725DD2EFF533200EF96E1 /* Strings.swift in Sources */,
+				049725F12F00F00000EF96E1 /* CameraPermissionManager.swift in Sources */,
 				049725D72EFEF50B00EF96E1 /* PhotoDetailView.swift in Sources */,
+				049725FE2F018C4900EF96E1 /* HomeModuleCard.swift in Sources */,
 				049725892EFB87A600EF96E1 /* AuthRepository.swift in Sources */,
 				049725942EFB89D500EF96E1 /* HomeView.swift in Sources */,
 				049725AB2EFE2A9B00EF96E1 /* SchemaSyncService.swift in Sources */,
@@ -746,7 +931,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0497262F2F01988900EF96E1 /* LoginViewModelTests.swift in Sources */,
+				049726302F01988900EF96E1 /* CameraPermissionManagerTests.swift in Sources */,
+				049726262F01988900EF96E1 /* MockLocalitiesRepository.swift in Sources */,
+				049726352F01988900EF96E1 /* LoginResponseDTOTests.swift in Sources */,
+				0497262E2F01988900EF96E1 /* PhotosViewModelTests.swift in Sources */,
+				049726272F01988900EF96E1 /* MockSchemaRepository.swift in Sources */,
+				049726232F01988900EF96E1 /* MockUserRepository.swift in Sources */,
+				049726322F01988900EF96E1 /* UserTests.swift in Sources */,
+				0497262C2F01988900EF96E1 /* VersionComparisonTests.swift in Sources */,
+				0497262B2F01988900EF96E1 /* MockVersionRepository.swift in Sources */,
+				049726372F01988900EF96E1 /* AppVersionDTOTests.swift in Sources */,
+				049726282F01988900EF96E1 /* HomeViewModelTests.swift in Sources */,
+				049726332F01988900EF96E1 /* PhotoTests.swift in Sources */,
+				049726252F01988900EF96E1 /* MockPhotoRepository.swift in Sources */,
+				0497262A2F01988900EF96E1 /* VersionViewModelTests.swift in Sources */,
+				049726292F01988900EF96E1 /* TablesViewModelTests.swift in Sources */,
+				049726312F01988900EF96E1 /* LocalityTests.swift in Sources */,
+				049726362F01988900EF96E1 /* LocalityDTOTests.swift in Sources */,
+				049725FF2F018C4900EF96E1 /* HomeModuleCard.swift in Sources */,
 				0497254C2EFB409000EF96E1 /* Inter_Rapidi_simoTests.swift in Sources */,
+				0497262D2F01988900EF96E1 /* LocalitiesViewModelTests.swift in Sources */,
+				049726242F01988900EF96E1 /* MockAuthRepository.swift in Sources */,
+				049726342F01988900EF96E1 /* SchemaTableDTOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,6 +1113,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "La app necesita acceso a la cámara para tomar fotos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "La app necesita acceso a la galería para seleccionar fotos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -937,6 +1145,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "La app necesita acceso a la cámara para tomar fotos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "La app necesita acceso a la galería para seleccionar fotos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -10,6 +10,7 @@ import SwiftUI
 struct VersionView: View {
     
     @StateObject var viewModel: VersionViewModel
+    @State private var showAlert = false
     let onValidated: () -> Void
     
     var body: some View {
@@ -26,9 +27,14 @@ struct VersionView: View {
                 onValidated()
             }
         }
+        .onChange(of: viewModel.errorMessage) { _, message in
+            if message != nil {
+                showAlert = true
+            }
+        }
         .alert(
             "Control de versión",
-            isPresented: .constant(viewModel.errorMessage != nil),
+            isPresented: $showAlert,
             actions: {
                 Button("Aceptar", role: .cancel) {}
             },

@@ -89,7 +89,8 @@ final class SQLiteManager {
             """
             CREATE TABLE IF NOT EXISTS schema_tables(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL UNIQUE,
+                nombre_tabla TEXT NOT NULL UNIQUE,
+                descripcion TEXT,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
             """,
@@ -105,8 +106,9 @@ final class SQLiteManager {
             """,
             """
             CREATE TABLE IF NOT EXISTS locality(
-                id INTEGER PRIMARY KEY,
-                name TEXT NOT NULL
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                abreviacion_ciudad TEXT NOT NULL,
+                nombre_completo TEXT NOT NULL
             );
             """
         ]
@@ -237,7 +239,7 @@ final class SQLiteManager {
     func saveUser(_ user: User) async throws {
         let sql = """
         INSERT OR REPLACE INTO user (usuario, identificacion, nombre)
-        VALUES ('\(user.user)', '\(user.id)', '\(user.name)');
+        VALUES ('\(user.user.replacingOccurrences(of: "'", with: "''"))', '\(user.id.replacingOccurrences(of: "'", with: "''"))', '\(user.name.replacingOccurrences(of: "'", with: "''"))');
         """
         try await execute(sql)
     }
@@ -256,22 +258,25 @@ final class SQLiteManager {
     }
     
     func saveLocalities(_ items: [Locality]) async throws {
-        for loc in items {
+        try await execute("DELETE FROM locality;")
+        
+        for (index, loc) in items.enumerated() {
             let sql = """
-            INSERT OR REPLACE INTO locality (id, name)
-            VALUES (\(loc.id), '\(loc.name)');
+            INSERT INTO locality (id, abreviacion_ciudad, nombre_completo)
+            VALUES (\(index + 1), '\(loc.abreviacionCiudad.replacingOccurrences(of: "'", with: "''"))', '\(loc.nombreCompleto.replacingOccurrences(of: "'", with: "''"))');
             """
             try await execute(sql)
         }
     }
 
     func fetchLocalities() async throws -> [Locality] {
-        let sql = "SELECT id, name FROM locality ORDER BY name;"
+        let sql = "SELECT id, abreviacion_ciudad, nombre_completo FROM locality ORDER BY nombre_completo;"
         
         return try await query(sql) { stmt in
             let id = Int(sqlite3_column_int(stmt, 0))
-            let name = String(cString: sqlite3_column_text(stmt, 1))
-            return Locality(id: id, name: name)
+            let abreviacion = String(cString: sqlite3_column_text(stmt, 1))
+            let nombreCompleto = String(cString: sqlite3_column_text(stmt, 2))
+            return Locality(id: id, abreviacionCiudad: abreviacion, nombreCompleto: nombreCompleto)
         }
     }
     

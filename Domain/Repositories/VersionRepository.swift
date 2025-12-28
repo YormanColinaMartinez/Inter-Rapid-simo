@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol VersionRepository {
+public protocol VersionRepository {
     func validateVersion() async throws -> AppVersionDTO
 }

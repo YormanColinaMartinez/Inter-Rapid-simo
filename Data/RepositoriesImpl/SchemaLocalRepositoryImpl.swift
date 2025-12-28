@@ -16,9 +16,11 @@ final class SchemaLocalRepositoryImpl {
         try await db.execute("DELETE FROM schema_tables;")
 
         for table in tables {
+            let nombreTabla = table.nombreTabla.replacingOccurrences(of: "'", with: "''")
+            let descripcion = (table.descripcion ?? "").replacingOccurrences(of: "'", with: "''")
             let sql = """
             INSERT INTO schema_tables (nombre_tabla, descripcion)
-            VALUES ('\(table.nombreTabla)', '\(table.descripcion ?? "")');
+            VALUES ('\(nombreTabla)', '\(descripcion)');
             """
             try await db.execute(sql)
         }

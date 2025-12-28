@@ -8,6 +8,11 @@
 import Foundation
 
 struct LocalityDTO: Decodable {
-    let id: Int
-    let name: String
+    let abreviacionCiudad: String
+    let nombreCompleto: String
+    
+    enum CodingKeys: String, CodingKey {
+        case abreviacionCiudad = "AbreviacionCiudad"
+        case nombreCompleto = "NombreCompleto"
+    }
 }

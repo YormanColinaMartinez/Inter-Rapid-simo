@@ -1,6 +1,6 @@
 //
 //  AuthRepository.swift
-//  Inter Rapidísimo
+//  Inter Rapidísimo
 //
 //  Created by mac on 23/12/25.
 //
@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AuthRepository {
-    func login() async throws -> User
+    func login(username: String, password: String) async throws -> User
 }

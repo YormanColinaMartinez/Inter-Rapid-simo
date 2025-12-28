@@ -15,7 +15,11 @@ final class AuthRepositoryImpl: AuthRepository {
         self.api = api
     }
 
-    func login() async throws -> User {
+    func login(username: String, password: String) async throws -> User {
+        guard !username.isEmpty, !password.isEmpty else {
+            throw NSError(domain: "AuthError", code: 400, userInfo: [NSLocalizedDescriptionKey: "Usuario y contraseña son requeridos"])
+        }
+        
         let url = URL(string:
             "https://apitesting.interrapidisimo.co/FtEntregaElectronica/MultiCanales/ApiSeguridadPruebas/api/Seguridad/AuthenticaUsuarioApp"
         )!
@@ -23,21 +27,26 @@ final class AuthRepositoryImpl: AuthRepository {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
-        request.addValue("pamr", forHTTPHeaderField: "Usuario")
-        request.addValue("987204545", forHTTPHeaderField: "Identificacion")
+        // Usar los valores del formulario en los headers
+        request.addValue(username, forHTTPHeaderField: "Usuario")
+        request.addValue(password, forHTTPHeaderField: "Identificacion")
         request.addValue("text/json", forHTTPHeaderField: "Accept")
-        request.addValue("pam.meredy21", forHTTPHeaderField: "IdUsuario")
+        request.addValue(username, forHTTPHeaderField: "IdUsuario")
         request.addValue("1295", forHTTPHeaderField: "IdCentroServicio")
         request.addValue("PTO/BOGOTA/CUND/COL/OF PRINCIPAL - CRA 30 # 7-45",forHTTPHeaderField: "NombreCentroServicio")
         request.addValue("9", forHTTPHeaderField: "IdAplicativoOrigen")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
+        // Codificar password en base64 para el body
+        let passwordBase64 = password.data(using: .utf8)?.base64EncodedString() ?? ""
+        let usernameBase64 = username.data(using: .utf8)?.base64EncodedString() ?? ""
+        
         let body: [String: String] = [
             "Mac": "",
             "NomAplicacion": "Controller APP",
-            "Password": "SW50ZXIyMDIx",
+            "Password": passwordBase64,
             "Path": "",
-            "Usuario": "cGFtLm1lcmVkeTIx"
+            "Usuario": usernameBase64
         ]
         request.httpBody = try JSONSerialization.data(withJSONObject: body)
 

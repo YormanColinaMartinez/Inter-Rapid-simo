@@ -56,25 +56,30 @@ final class VersionViewModel: ObservableObject {
 extension String {
     
     func compareVersion(to other: String) -> VersionComparison {
-        let localNum = self.cleanedVersion().asVersionNumber
-        let remoteNum = other.cleanedVersion().asVersionNumber
+        let localParts = self.cleanedVersion().versionParts
+        let remoteParts = other.cleanedVersion().versionParts
         
-        if localNum < remoteNum { return .lower }
-        if localNum > remoteNum { return .higher }
+        let maxLength = max(localParts.count, remoteParts.count)
+        
+        for i in 0..<maxLength {
+            let localPart = i < localParts.count ? localParts[i] : 0
+            let remotePart = i < remoteParts.count ? remoteParts[i] : 0
+            
+            if localPart < remotePart {
+                return .lower
+            } else if localPart > remotePart {
+                return .higher
+            }
+        }
+        
         return .equal
     }
     
-    private var asVersionNumber: Int {
-        return Int(self.replacingOccurrences(of: ".", with: "")) ?? 0
+    private var versionParts: [Int] {
+        return self.split(separator: ".").compactMap { Int($0) }
     }
     
     private func cleanedVersion() -> String {
         return self.filter { $0.isNumber || $0 == "." }
     }
-}
-
-enum VersionComparison {
-    case lower
-    case equal
-    case higher
 }

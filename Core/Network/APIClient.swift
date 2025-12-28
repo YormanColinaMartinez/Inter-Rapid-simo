@@ -9,8 +9,17 @@ import Foundation
 
 final class APIClient: APIClientProtocol {
     
+    private let session: URLSession
+    
+    init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 30.0
+        configuration.timeoutIntervalForResource = 60.0
+        self.session = URLSession(configuration: configuration)
+    }
+    
     func request<T: Decodable>(_ request: URLRequest) async throws -> T {
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await session.data(for: request)
 
         guard let http = response as? HTTPURLResponse else {
             throw APIError.invalidResponse
@@ -28,7 +37,7 @@ final class APIClient: APIClientProtocol {
     }
     
     func requestPlain(_ request: URLRequest) async throws -> String {
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await session.data(for: request)
 
         guard let http = response as? HTTPURLResponse else {
             throw APIError.invalidResponse

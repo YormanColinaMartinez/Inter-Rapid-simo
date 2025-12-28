@@ -14,11 +14,32 @@ final class PhotosViewModel: ObservableObject {
     @Published var showDetail = false
     @Published var photos: [Photo] = []
     @Published var errorMessage: String?
+    @Published var showPermissionAlert = false
 
     private let repo: PhotoRepository
 
     init(repo: PhotoRepository = PhotoRepositoryImpl()) {
         self.repo = repo
+    }
+    
+    func requestCameraAccess() async {
+        let status = CameraPermissionManager.checkPermission()
+        
+        switch status {
+        case .authorized:
+            showCamera = true
+        case .denied, .restricted:
+            showPermissionAlert = true
+            errorMessage = "El acceso a la cámara está denegado. Por favor, habilítalo en Configuración."
+        case .notDetermined:
+            let granted = await CameraPermissionManager.requestPermission()
+            if granted {
+                showCamera = true
+            } else {
+                showPermissionAlert = true
+                errorMessage = "Se necesita acceso a la cámara para tomar fotos."
+            }
+        }
     }
 
     func saveImage(_ image: UIImage) async {

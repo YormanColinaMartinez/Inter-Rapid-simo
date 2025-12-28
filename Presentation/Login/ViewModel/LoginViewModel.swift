@@ -21,11 +21,16 @@ final class LoginViewModel: ObservableObject {
         self.userRepo = userRepo
     }
     
-    func login() async {
+    func login(username: String, password: String) async {
+        guard !username.isEmpty, !password.isEmpty else {
+            errorMessage = "Por favor ingresa usuario y contraseña"
+            return
+        }
+        
         isLoading = true
         errorMessage = nil
         do {
-            let user = try await authRepo.login()
+            let user = try await authRepo.login(username: username, password: password)
             try await userRepo.save(user: user)
         } catch {
             errorMessage = error.localizedDescription

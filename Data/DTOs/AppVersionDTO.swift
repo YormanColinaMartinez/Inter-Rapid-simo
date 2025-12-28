@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct AppVersionDTO: Decodable {
-    let version: String
+public struct AppVersionDTO: Decodable {
+    public let version: String
 }
