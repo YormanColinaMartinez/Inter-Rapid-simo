@@ -2,7 +2,7 @@
 
 ---
 
-## 🚀 Cómo correr el proyecto
+## Cómo correr el proyecto
 
 ### Requisitos
 - Xcode 15+
