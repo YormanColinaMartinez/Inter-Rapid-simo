@@ -1,7 +1,5 @@
 # 📱 Inter Rapidísimo – Prueba Técnica iOS
 
-Solución desarrollada en **SwiftUI** con **async/await** y **SQLite3** para persistencia local.
-
 ---
 
 ## 🚀 Cómo correr el proyecto
@@ -17,11 +15,11 @@ Solución desarrollada en **SwiftUI** con **async/await** y **SQLite3** para per
 3. Seleccionar simulador o dispositivo
 4. Ejecutar (`⌘R`)
 
-> ⚠️ Para el módulo de fotos, usar **dispositivo físico**. En simulador se habilita selección desde galería.
+> Para el módulo de fotos, usar **dispositivo físico**. En simulador se habilita selección desde galería.
 
 ---
 
-## 🧱 Arquitectura
+## Arquitectura
 
 **MVVM** con separación por capas:
 
@@ -50,7 +48,7 @@ Solución desarrollada en **SwiftUI** con **async/await** y **SQLite3** para per
 
 ---
 
-## ✅ Requisitos implementados
+## Requisitos implementados
 
 ### 1. Capa de Seguridad
 
@@ -133,7 +131,7 @@ Solución desarrollada en **SwiftUI** con **async/await** y **SQLite3** para per
 
 ---
 
-## 📦 Dependencias
+## Dependencias
 
 **Ninguna librería externa.**
 
@@ -147,7 +145,7 @@ Utiliza únicamente:
 
 ---
 
-## 🧪 Testing
+## Testing
 
 **Tests unitarios incluidos:**
 - SQLiteManager (CRUD de usuarios, fotos, localidades)
@@ -162,7 +160,7 @@ Utiliza únicamente:
 
 ---
 
-## 🧠 Supuestos y trade-offs
+## Supuestos y trade-offs
 
 1. **Servicios remotos pueden fallar** → Fallbacks locales implementados
 2. **Versión del endpoint retorna texto plano** → Cliente específico para manejar esto
@@ -172,7 +170,7 @@ Utiliza únicamente:
 
 ---
 
-## 📝 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 Inter Rapidísimo/
